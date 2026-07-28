@@ -10,6 +10,8 @@ export const generateWALink = (params: {
   notes?: string;
   message?: string;
   email?: string;
+  time?: string;
+  location?: string;
 }): string => {
   const businessNumber = config.whatsapp.businessNumber;
 
@@ -25,8 +27,8 @@ Nomor WhatsApp: ${params.phone}
 Tanggal: ${params.date}
 Model: ${params.model}
 ${params.purpose ? `Tujuan: ${params.purpose}` : ''}
-${(params as any).time ? `Waktu: ${(params as any).time}` : ''}
-${(params as any).location ? `Lokasi: ${(params as any).location}` : ''}
+${params.time ? `Waktu: ${params.time}` : ''}
+${params.location ? `Lokasi: ${params.location}` : ''}
 ${params.notes ? `Catatan: ${params.notes}` : ''}
 
 Mohon infonya. Terima kasih.`;
