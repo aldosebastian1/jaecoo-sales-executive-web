@@ -177,21 +177,15 @@ const ArtikelDetail: React.FC<ArtikelDetailProps> = async ({ params }) => {
               Bagikan Artikel Ini
             </h3>
             <div className="flex flex-col sm:flex-row gap-3">
-              <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(config.site.url + '/artikel/' + articleData.slug)}`} target="_blank" rel="noopener noreferrer" className="flex-1">
-                <Button variant="outline" size="md" className="w-full">
-                  Bagikan ke Facebook
-                </Button>
-              </a>
-              <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(config.site.url + '/artikel/' + articleData.slug)}&text=${encodeURIComponent(articleData.title)}`} target="_blank" rel="noopener noreferrer" className="flex-1">
-                <Button variant="outline" size="md" className="w-full">
-                  Bagikan ke Twitter
-                </Button>
-              </a>
-              <a href={`https://api.whatsapp.com/send?text=${encodeURIComponent(articleData.title + ' - ' + config.site.url + '/artikel/' + articleData.slug)}`} target="_blank" rel="noopener noreferrer" className="flex-1">
-                <Button variant="outline" size="md" className="w-full">
-                  Bagikan ke WhatsApp
-                </Button>
-              </a>
+              <Button href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(config.site.url + '/artikel/' + articleData.slug)}`} target="_blank" rel="noopener noreferrer" variant="outline" size="md" className="flex-1 w-full">
+                Bagikan ke Facebook
+              </Button>
+              <Button href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(config.site.url + '/artikel/' + articleData.slug)}&text=${encodeURIComponent(articleData.title)}`} target="_blank" rel="noopener noreferrer" variant="outline" size="md" className="flex-1 w-full">
+                Bagikan ke Twitter
+              </Button>
+              <Button href={`https://api.whatsapp.com/send?text=${encodeURIComponent(articleData.title + ' - ' + config.site.url + '/artikel/' + articleData.slug)}`} target="_blank" rel="noopener noreferrer" variant="outline" size="md" className="flex-1 w-full">
+                Bagikan ke WhatsApp
+              </Button>
             </div>
           </div>
 
@@ -204,11 +198,9 @@ const ArtikelDetail: React.FC<ArtikelDetailProps> = async ({ params }) => {
               Hubungi tim kami untuk konsultasi gratis tentang perawatan dan
               pemeliharaan kendaraan Anda
             </p>
-            <Link href="/hubungi-kami">
-              <Button variant="primary" size="lg">
-                Hubungi Kami Sekarang
-              </Button>
-            </Link>
+            <Button as={Link} href="/hubungi-kami" variant="primary" size="lg">
+              Hubungi Kami Sekarang
+            </Button>
           </section>
 
           {/* Related Articles */}

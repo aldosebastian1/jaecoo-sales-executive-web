@@ -17,7 +17,7 @@ const poppins = Poppins({ subsets: ['latin'], weight: ['400', '500', '600', '700
 const geist = Geist({ subsets: ['latin'], variable: '--font-geist', display: 'swap' });
 
 export const viewport: Viewport = {
-  themeColor: '#1A677A',
+  themeColor: '#0F7A83',
   width: 'device-width',
   initialScale: 1,
 };

@@ -31,8 +31,20 @@ export const TestDriveSchema = z
   })
   .strict();
 
+export const SendEmailSchema = z
+  .object({
+    name: z.string().min(2, 'Nama terlalu pendek'),
+    phone: z.string().min(10, 'Nomor HP tidak valid'),
+    modelName: z.string().min(1, 'Model tidak valid'),
+    preferredDate: z.string().optional(),
+    purpose: z.string().optional(),
+    honeypot: z.string().optional(),
+  })
+  .strict();
+
 export type TestDriveFormData = z.infer<typeof TestDriveSchema>;
 export type LeadCTAFormData = z.infer<typeof LeadCTASchema>;
+export type SendEmailFormData = z.infer<typeof SendEmailSchema>;
 
 export const validateForm = async (schema: z.ZodSchema, data: unknown) => {
   try {

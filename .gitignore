@@ -1,0 +1,80 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Production
+/.next
+/build
+/out
+*.tgz
+
+# Misc
+.DS_Store
+*.pem
+.env
+.env.local
+.env.*.local
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+.eslintcache
+
+# Local env files
+.env.local
+.env.*.local
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.swp
+.swo
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel
+
+# Next.js
+.next/
+out/
+
+# TypeScript
+*.tsbuildinfo
+
+# Lock files (optional - uncomment if you want to commit them)
+# package-lock.json
+# yarn.lock
+
+# Temporary/Scratch Scripts
+fix_links.js
+replace.js
+
+# Internal Working Documents
+docs/CODE_ARCHITECTURE_AUDIT.md
+docs/PRE-LAUNCH-WORKFLOW.md
+
+# AI Agents & Skills Configuration
+.agents
+agent
+.antigravitycli/
+skills-lock.json
+panduan_setup_proyek_baru.md
