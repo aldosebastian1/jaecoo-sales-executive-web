@@ -33,7 +33,7 @@ export default function VehicleCatalog() {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-[60px] relative z-10">
         <ScrollReveal variant="slide-up">
           <div className="flex flex-col items-start mb-12">
-            <span className="font-geist text-[#0F7A83] text-[12px] md:text-[14px] font-semibold uppercase tracking-[0.2em] block mb-3">
+            <span className="font-geist text-primary text-[12px] md:text-[14px] font-semibold uppercase tracking-[0.2em] block mb-3">
               KATALOG KENDARAAN
             </span>
             <h2 className="font-geist font-light text-4xl md:text-5xl text-gray-900 tracking-[-0.03em] uppercase">
@@ -65,11 +65,11 @@ export default function VehicleCatalog() {
               <div className="pt-0 pb-0 px-5 -mt-2 relative z-10 flex justify-between items-start gap-3 lg:gap-2">
                 <div className="flex flex-col gap-1 text-left">
                   <h3 className="font-geist font-semibold text-xl md:text-2xl text-gray-900 leading-none tracking-tight">{vehicle.name}</h3>
-                  <p className="font-geist font-medium text-[#0F7A83]/80 text-xs md:text-sm uppercase tracking-wider mt-0.5">{vehicle.slogan}</p>
+                  <p className="font-geist font-medium text-primary/80 text-xs md:text-sm uppercase tracking-wider mt-0.5">{vehicle.slogan}</p>
                 </div>
                 <div className="flex flex-col gap-1 text-right">
                   <span className="font-geist font-medium text-sm md:text-base text-gray-500 leading-none">{vehicle.priceLabel}</span>
-                  <span className="font-geist font-bold text-[#0F7A83] text-sm md:text-lg uppercase tracking-wider mt-0.5">{vehicle.priceValue}</span>
+                  <span className="font-geist font-bold text-primary text-sm md:text-lg uppercase tracking-wider mt-0.5">{vehicle.priceValue}</span>
                 </div>
               </div>
             </div>
@@ -80,14 +80,14 @@ export default function VehicleCatalog() {
         <div className="flex justify-center gap-4 mt-2 hidden md:flex">
           <button 
             onClick={() => scroll('left')}
-            className="w-10 h-10 rounded-full bg-[#0F7A83] border border-[#0F7A83] flex items-center justify-center text-white hover:bg-white hover:text-[#0F7A83] transition-all duration-300 shadow-sm"
+            className="w-10 h-10 rounded-full bg-primary border border-primary flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all duration-300 shadow-sm"
             aria-label="Geser ke Kiri"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
           </button>
           <button 
             onClick={() => scroll('right')}
-            className="w-10 h-10 rounded-full bg-[#0F7A83] border border-[#0F7A83] flex items-center justify-center text-white hover:bg-white hover:text-[#0F7A83] transition-all duration-300 shadow-sm"
+            className="w-10 h-10 rounded-full bg-primary border border-primary flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all duration-300 shadow-sm"
             aria-label="Geser ke Kanan"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
