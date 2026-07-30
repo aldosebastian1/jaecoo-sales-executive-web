@@ -11,14 +11,14 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@next/third-parties": "^15.0.0",
+    "@next/third-parties": "^16.2.12",
     "@tailwindcss/postcss": "^4.3.3",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "autoprefixer": "^10.4.0",
     "clsx": "^2.0.0",
     "framer-motion": "^12.40.0",
-    "next": "^15.0.0",
+    "next": "^16.2.12",
     "nextjs-toploader": "^3.9.17",
     "postcss": "^8.4.0",
     "react": "^19.0.0",
@@ -36,8 +36,8 @@
     "@types/node": "^20.10.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
-    "eslint": "^8.55.0",
-    "eslint-config-next": "^15.0.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.2.12",
     "prettier": "^3.1.0"
   }
 }
