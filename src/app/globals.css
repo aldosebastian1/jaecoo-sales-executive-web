@@ -1,5 +1,49 @@
 @import "tailwindcss";
-@config "../../tailwind.config.ts";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-primary: #0F7A83;
+  --color-primary-hover: #155464;
+  --color-primary-active: #114654;
+  --color-primary-light: #edf5f7;
+  --color-primary-50: #edf5f7;
+  --color-primary-100: #d1e5eb;
+  --color-primary-200: #a7ccdb;
+  --color-primary-300: #74acc4;
+  --color-primary-400: #488ba8;
+  --color-primary-500: #2f6e8a;
+  --color-primary-600: #265a73;
+  --color-primary-700: #1a677a;
+  --color-primary-800: #155464;
+  --color-primary-900: #114654;
+  --color-primary-950: #0a2e38;
+
+  --color-secondary: #9A7222;
+  --color-secondary-hover: #7C5C1A;
+  --color-secondary-active: #614713;
+  --color-secondary-light: #FDF7EB;
+
+  --font-inter: var(--font-inter), sans-serif;
+  --font-poppins: var(--font-poppins), sans-serif;
+  --font-space: var(--font-montserrat), sans-serif;
+  --font-montserrat: var(--font-montserrat), sans-serif;
+  --font-epilogue: var(--font-epilogue), sans-serif;
+  --font-geist: var(--font-geist), sans-serif;
+  --font-serif: var(--font-serif), serif;
+
+  --animate-slide-right-short: slide-right-short 0.8s ease-out forwards;
+  --animate-slide-up: slide-up 0.8s ease-out forwards;
+}
+
+@keyframes slide-right-short {
+  0% { opacity: 0; transform: translateX(-20px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
 
 /* Smoothscroll */
 html {
