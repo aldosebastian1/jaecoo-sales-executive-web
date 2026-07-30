@@ -9,7 +9,7 @@ export default function TestDriveSection() {
     <section id="test-drive" className="relative w-full pt-16 md:pt-24 pb-10 md:pb-16 overflow-hidden border-none border-b-0">
         {/* Background Image & Shadow Overlay */}
         <div className="absolute inset-0 z-0">
-            <Image src="/images/test-drive-bg.png" alt="Test Drive Jaecoo" priority fill sizes="100vw" className="object-cover object-center" />
+            <Image src="/images/test-drive-bg.png" alt="Test Drive Jaecoo" fill sizes="100vw" className="object-cover object-center" />
             {/* Soft bottom shadow */}
             <div className="absolute bottom-0 left-0 w-full h-24 md:h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
         </div>
