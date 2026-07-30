@@ -131,7 +131,7 @@ export default function TestDriveForm() {
                             value={formData.name}
                             onChange={handleChange}
                             placeholder="Nama Lengkap"
-                            className={`w-full bg-gray-50/50 border ${errors.name ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm py-3 pl-10 pr-3 rounded-xl focus:outline-none focus:border-[#0F7A83] focus:ring-1 focus:ring-[#0F7A83] transition-colors`} 
+                            className={`w-full bg-gray-50/50 border ${errors.name ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm py-3 pl-10 pr-3 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors`} 
                         />
                         {errors.name && <p className="text-red-500 text-xs mt-1 absolute -bottom-5">{errors.name}</p>}
                     </div>
@@ -147,7 +147,7 @@ export default function TestDriveForm() {
                             value={formData.phone}
                             onChange={handleChange}
                             placeholder="No. WhatsApp Aktif"
-                            className={`w-full bg-gray-50/50 border ${errors.phone ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm py-3 pl-10 pr-3 rounded-xl focus:outline-none focus:border-[#0F7A83] focus:ring-1 focus:ring-[#0F7A83] transition-colors`} 
+                            className={`w-full bg-gray-50/50 border ${errors.phone ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm py-3 pl-10 pr-3 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors`} 
                         />
                         {errors.phone && <p className="text-red-500 text-xs mt-1 absolute -bottom-5">{errors.phone}</p>}
                     </div>
@@ -165,7 +165,7 @@ export default function TestDriveForm() {
                             name="date"
                             value={formData.date}
                             onChange={handleChange}
-                            className={`w-full bg-gray-50/50 border ${errors.date ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm py-3 pl-10 pr-3 rounded-xl focus:outline-none focus:border-[#0F7A83] focus:ring-1 focus:ring-[#0F7A83] transition-colors [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:left-0 [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:cursor-pointer`} 
+                            className={`w-full bg-gray-50/50 border ${errors.date ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm py-3 pl-10 pr-3 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:left-0 [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:cursor-pointer`} 
                         />
                         {errors.date && <p className="text-red-500 text-xs mt-1 absolute -bottom-5">{errors.date}</p>}
                     </div>
@@ -178,7 +178,7 @@ export default function TestDriveForm() {
                             name="time"
                             value={formData.time}
                             onChange={handleChange}
-                            className={`w-full bg-gray-50/50 border ${errors.time ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm py-3 pl-10 pr-8 rounded-xl focus:outline-none focus:border-[#0F7A83] focus:ring-1 focus:ring-[#0F7A83] transition-colors appearance-none`}
+                            className={`w-full bg-gray-50/50 border ${errors.time ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm py-3 pl-10 pr-8 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none`}
                         >
                             <option value="">Waktu</option>
                             <option value="Pagi (09:00 - 12:00)">Pagi (09:00 - 12:00)</option>
@@ -202,7 +202,7 @@ export default function TestDriveForm() {
                         name="location"
                         value={formData.location}
                         onChange={handleChange}
-                        className={`w-full bg-gray-50/50 border ${errors.location ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm py-3 pl-10 pr-8 rounded-xl focus:outline-none focus:border-[#0F7A83] focus:ring-1 focus:ring-[#0F7A83] transition-colors appearance-none`}
+                        className={`w-full bg-gray-50/50 border ${errors.location ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm py-3 pl-10 pr-8 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none`}
                     >
                         <option value="">Pilih Lokasi Dealer...</option>
                         <option value="Jaecoo Medan Amplas">Jaecoo Medan Amplas (Jl. Sisingamangaraja)</option>
@@ -226,7 +226,7 @@ export default function TestDriveForm() {
                         onChange={handleChange}
                         placeholder="Pesan / Catatan (Opsional)"
                         rows={2}
-                        className="w-full bg-gray-50/50 border border-gray-200 text-gray-900 text-sm py-3 pl-10 pr-3 rounded-xl focus:outline-none focus:border-[#0F7A83] focus:ring-1 focus:ring-[#0F7A83] transition-colors resize-none" 
+                        className="w-full bg-gray-50/50 border border-gray-200 text-gray-900 text-sm py-3 pl-10 pr-3 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none" 
                     />
                 </div>
                 
@@ -236,7 +236,7 @@ export default function TestDriveForm() {
                     disabled={isSubmitting}
                     whileTap={{ scale: 0.98 }}
                     whileHover={{ scale: 1.01 }}
-                    className="w-full bg-[#0F7A83] hover:bg-[#0c6269] disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-geist text-[14px] font-semibold py-3 px-5 transition-colors mt-2 rounded-full flex items-center justify-center gap-2 shadow-sm"
+                    className="w-full bg-primary hover:bg-[#0c6269] disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-geist text-[14px] font-semibold py-3 px-5 transition-colors mt-2 rounded-full flex items-center justify-center gap-2 shadow-sm"
                 >
                     {isSubmitting ? (
                       <>
