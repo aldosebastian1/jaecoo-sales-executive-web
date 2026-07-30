@@ -81,7 +81,7 @@ export default function HeroSlider() {
                   initial={{ width: "0%" }}
                   animate={{ width: "100%" }}
                   transition={{ duration: 8, ease: "linear" }}
-                  className="absolute left-0 top-0 h-full bg-[#0F7A83]"
+                  className="absolute left-0 top-0 h-full bg-primary"
                 />
               )}
             </button>
