@@ -57,7 +57,7 @@ export default function CustomerJourney() {
         {/* Header Section */}
         <ScrollReveal variant="slide-up">
           <div className="flex flex-col items-start text-left">
-            <span className="font-geist text-[#0F7A83] text-[12px] md:text-[14px] font-semibold uppercase tracking-[0.2em] mb-4">
+            <span className="font-geist text-primary text-[12px] md:text-[14px] font-semibold uppercase tracking-[0.2em] mb-4">
               PROSES PEMBELIAN
             </span>
             <h2 className="font-geist font-light text-4xl md:text-5xl text-gray-900 mb-6 uppercase tracking-[0.1em]">
@@ -80,7 +80,7 @@ export default function CustomerJourney() {
                   {/* Image Container with Badge */}
                   <div className="relative w-full h-[140px] xl:h-[130px] overflow-hidden shrink-0">
                     {/* Badge */}
-                    <div className="absolute top-0 left-0 w-8 h-8 bg-[#0F7A83] text-white flex items-center justify-center font-geist font-medium text-sm rounded-br-2xl shadow-sm z-10">
+                    <div className="absolute top-0 left-0 w-8 h-8 bg-primary text-white flex items-center justify-center font-geist font-medium text-sm rounded-br-2xl shadow-sm z-10">
                       {step.id}
                     </div>
                     
@@ -110,7 +110,7 @@ export default function CustomerJourney() {
               {/* Arrow */}
               {index < steps.length - 1 && (
                 <div className="hidden xl:flex items-center justify-center flex-shrink-0 z-20 -mx-3">
-                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-[#0F7A83] text-white shadow-sm border border-[#FAFAFA]">
+                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white shadow-sm border border-[#FAFAFA]">
                     <svg className="w-3 h-3 ml-px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                     </svg>
@@ -157,7 +157,7 @@ export default function CustomerJourney() {
               <div className="flex flex-row gap-3 w-auto shrink-0">
                 <Link 
                   href="#test-drive"
-                  className="font-geist flex items-center justify-center bg-[#0F7A83] text-white px-[17px] py-[9px] text-[12px] font-semibold tracking-[0.02em] rounded-full text-center hover:bg-[#0c626a] transition-all duration-300 whitespace-nowrap shadow-sm"
+                  className="font-geist flex items-center justify-center bg-primary text-white px-[17px] py-[9px] text-[12px] font-semibold tracking-[0.02em] rounded-full text-center hover:bg-[#0c626a] transition-all duration-300 whitespace-nowrap shadow-sm"
                 >
                   BOOKING TEST DRIVE
                 </Link>
