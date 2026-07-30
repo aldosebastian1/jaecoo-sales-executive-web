@@ -23,7 +23,7 @@ export default function LocationPopup({ children }: { children?: React.ReactNode
           onClick={() => setIsOpen(true)}
         >
         <div className="flex items-center gap-2">
-            <svg className="text-[#0F7A83] group-hover:text-white transition-colors duration-300 shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg className="text-primary group-hover:text-white transition-colors duration-300 shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
             </svg>
             <h4 className="font-geist font-semibold text-[15px] text-gray-900">Pilih Lokasi</h4>
@@ -68,12 +68,12 @@ export default function LocationPopup({ children }: { children?: React.ReactNode
               <div className="flex flex-col gap-3 order-1 md:order-2 justify-start">
                   <button 
                     onClick={() => setActiveLocation('centerpoint')}
-                    className={`group text-left p-4 rounded-xl border transition-all duration-300 ${activeLocation === 'centerpoint' ? 'bg-[#0F7A83] border-[#0F7A83] shadow-lg shadow-[#0F7A83]/20' : 'bg-transparent border-[#0F7A83] hover:bg-[#0F7A83]'}`}
+                    className={`group text-left p-4 rounded-xl border transition-all duration-300 ${activeLocation === 'centerpoint' ? 'bg-primary border-primary shadow-lg shadow-primary/20' : 'bg-transparent border-primary hover:bg-primary'}`}
                   >
                      <div className="flex justify-between items-start mb-1.5">
-                         <h4 className={`font-geist font-medium text-[15px] transition-colors ${activeLocation === 'centerpoint' ? 'text-white' : 'text-[#0F7A83] group-hover:text-white'}`}>City Store Center Point Mall</h4>
+                         <h4 className={`font-geist font-medium text-[15px] transition-colors ${activeLocation === 'centerpoint' ? 'text-white' : 'text-primary group-hover:text-white'}`}>City Store Center Point Mall</h4>
                          {activeLocation === 'centerpoint' && (
-                             <span className="bg-white text-[#0F7A83] text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-medium shrink-0 ml-2">Aktif</span>
+                             <span className="bg-white text-primary text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-medium shrink-0 ml-2">Aktif</span>
                          )}
                      </div>
                      <p className={`font-geist text-[13px] leading-relaxed transition-colors ${activeLocation === 'centerpoint' ? 'text-white/90' : 'text-gray-500 group-hover:text-white/90'}`}>
@@ -83,12 +83,12 @@ export default function LocationPopup({ children }: { children?: React.ReactNode
 
                   <button 
                     onClick={() => setActiveLocation('amplas')}
-                    className={`group text-left p-4 rounded-xl border transition-all duration-300 ${activeLocation === 'amplas' ? 'bg-[#0F7A83] border-[#0F7A83] shadow-lg shadow-[#0F7A83]/20' : 'bg-transparent border-[#0F7A83] hover:bg-[#0F7A83]'}`}
+                    className={`group text-left p-4 rounded-xl border transition-all duration-300 ${activeLocation === 'amplas' ? 'bg-primary border-primary shadow-lg shadow-primary/20' : 'bg-transparent border-primary hover:bg-primary'}`}
                   >
                      <div className="flex justify-between items-start mb-1.5">
-                         <h4 className={`font-geist font-medium text-[15px] transition-colors ${activeLocation === 'amplas' ? 'text-white' : 'text-[#0F7A83] group-hover:text-white'}`}>Jaecoo Medan Amplas (3S)</h4>
+                         <h4 className={`font-geist font-medium text-[15px] transition-colors ${activeLocation === 'amplas' ? 'text-white' : 'text-primary group-hover:text-white'}`}>Jaecoo Medan Amplas (3S)</h4>
                          {activeLocation === 'amplas' && (
-                             <span className="bg-white text-[#0F7A83] text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-medium shrink-0 ml-2">Aktif</span>
+                             <span className="bg-white text-primary text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-medium shrink-0 ml-2">Aktif</span>
                          )}
                      </div>
                      <p className={`font-geist text-[13px] leading-relaxed transition-colors ${activeLocation === 'amplas' ? 'text-white/90' : 'text-gray-500 group-hover:text-white/90'}`}>
