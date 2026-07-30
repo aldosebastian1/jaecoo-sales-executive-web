@@ -30,7 +30,7 @@ export default function NotFound() {
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center items-center">
             <Link 
               href="/" 
-              className="font-geist bg-[#0F7A83] text-white px-7 py-3 text-[16px] font-semibold tracking-[0.02em] rounded-full w-full sm:w-auto text-center hover:bg-[#0c626a] transition-all duration-300"
+              className="font-geist bg-primary text-white px-7 py-3 text-[16px] font-semibold tracking-[0.02em] rounded-full w-full sm:w-auto text-center hover:bg-[#0c626a] transition-all duration-300"
             >
               KEMBALI KE BERANDA
             </Link>
