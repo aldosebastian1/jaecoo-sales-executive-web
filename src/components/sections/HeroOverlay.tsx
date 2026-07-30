@@ -9,7 +9,7 @@ export default function HeroOverlay() {
       <div className="w-full max-w-2xl flex flex-col items-start text-left">
         <ScrollReveal priority variant="slide-right-short" delay={0.1} className="w-full flex flex-col items-start text-left">
           <div className="inline-flex mb-4 pt-6">
-            <span className="font-geist bg-[#0F7A83] text-white px-4 py-1.5 rounded-full text-[12px] md:text-[14px] font-semibold uppercase tracking-[0.15em] shadow-sm">
+            <span className="font-geist bg-primary text-white px-4 py-1.5 rounded-full text-[12px] md:text-[14px] font-semibold uppercase tracking-[0.15em] shadow-sm">
               SUV PREMIUM UNTUK GAYA HIDUP MODERN
             </span>
           </div>
@@ -20,7 +20,7 @@ export default function HeroOverlay() {
             Teknologi cerdas. Performa buas. Dibuat untuk mereka yang tidak pernah puas dengan standar biasa.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-start">
-            <Link href="#katalog" className="font-geist bg-[#0F7A83] text-white px-7 py-3 text-[16px] font-semibold tracking-[0.02em] rounded-full w-full sm:w-auto text-center hover:bg-[#0c626a] transition-all duration-300">
+            <Link href="#katalog" className="font-geist bg-primary text-white px-7 py-3 text-[16px] font-semibold tracking-[0.02em] rounded-full w-full sm:w-auto text-center hover:bg-[#0c626a] transition-all duration-300">
               JELAJAHI MODEL
             </Link>
             <HeroLeadCTA />
