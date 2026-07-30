@@ -198,9 +198,11 @@ const ArtikelDetail: React.FC<ArtikelDetailProps> = async ({ params }) => {
               Hubungi tim kami untuk konsultasi gratis tentang perawatan dan
               pemeliharaan kendaraan Anda
             </p>
-            <Button as={Link} href="/hubungi-kami" variant="primary" size="lg">
-              Hubungi Kami Sekarang
-            </Button>
+            <Link href="/hubungi-kami">
+              <Button as="span" variant="primary" size="lg">
+                Hubungi Kami Sekarang
+              </Button>
+            </Link>
           </section>
 
           {/* Related Articles */}
