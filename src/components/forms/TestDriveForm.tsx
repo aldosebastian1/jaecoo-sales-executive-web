@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { generateWALink } from '@/lib/whatsapp';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TestDriveSchema, validateForm } from '@/lib/validation';
+import { sendTestDriveEmail } from '@/actions/testDrive';
 
 export default function TestDriveForm() {
   const [formData, setFormData] = useState({
@@ -36,6 +37,18 @@ export default function TestDriveForm() {
     if (!validation.success) {
       setErrors(validation.errors || {});
       setIsSubmitting(false);
+      
+      // GA4 Tracking - Error Validation
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        // Collect field names that have errors
+        const errorFields = Object.keys(validation.errors || {}).join(',');
+        (window as any).gtag('event', 'form_error', {
+          event_category: 'form_validation',
+          event_label: 'test_drive_form_new',
+          error_fields: errorFields
+        });
+      }
+      
       return;
     }
 
@@ -47,6 +60,17 @@ export default function TestDriveForm() {
         location: formData.location
       });
     }
+
+    // Send email notification via Resend
+    // Dilakukan di background agar jika gagal tidak menghentikan proses WhatsApp
+    sendTestDriveEmail({
+      name: formData.name,
+      phone: formData.phone,
+      date: formData.date,
+      time: formData.time,
+      location: formData.location,
+      notes: formData.notes
+    }).catch(console.error);
 
     const waLink = generateWALink({
       type: 'test_drive',
