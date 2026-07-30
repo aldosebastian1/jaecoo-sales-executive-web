@@ -64,7 +64,7 @@ export default function WhyJaecoo() {
                 {/* Image Container with Badge */}
                 <div className="relative w-full h-[130px] lg:h-[120px] xl:h-[130px] overflow-hidden">
                   {/* Badge */}
-                  <div className="absolute top-4 left-4 z-10 w-7 h-7 bg-[#0F7A83] rounded-full flex items-center justify-center shadow-[0_4px_12px_-4px_rgba(15,122,131,0.5)]">
+                  <div className="absolute top-4 left-4 z-10 w-7 h-7 bg-primary rounded-full flex items-center justify-center shadow-[0_4px_12px_-4px_rgba(15,122,131,0.5)]">
                     <span className="font-geist font-medium text-white text-[12px]">0{card.id}</span>
                   </div>
                   
@@ -82,7 +82,7 @@ export default function WhyJaecoo() {
 
                 {/* Content Container */}
                 <div className="p-4 md:p-5 flex flex-col flex-grow">
-                  <h3 className="font-geist text-[18px] md:text-[20px] font-semibold text-[#0F7A83] mb-1">
+                  <h3 className="font-geist text-[18px] md:text-[20px] font-semibold text-primary mb-1">
                     {card.title}
                   </h3>
                   <p className="font-geist text-gray-500 leading-relaxed text-[14px]">
