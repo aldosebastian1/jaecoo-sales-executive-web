@@ -56,7 +56,6 @@ export default function VehicleCatalog() {
                 <Image 
                   src={vehicle.image} 
                   alt={vehicle.name}
-                  priority 
                   fill
                   sizes="(max-width: 768px) 85vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
