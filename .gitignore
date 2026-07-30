@@ -78,3 +78,5 @@ agent
 .antigravitycli/
 skills-lock.json
 panduan_setup_proyek_baru.md
+.vercel
+.env*
