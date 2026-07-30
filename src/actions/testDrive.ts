@@ -1,21 +1,32 @@
 "use server";
 
 import { Resend } from "resend";
+import { TestDriveSchema, type TestDriveFormData } from "@/lib/validation";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-interface TestDriveData {
-  name: string;
-  phone: string;
-  date: string;
-  time: string;
-  location: string;
-  notes: string;
-}
+// Utilitas untuk mencegah injeksi HTML / XSS pada email
+const escapeHtml = (unsafe: string | undefined | null) => {
+  if (!unsafe) return "";
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+};
 
-export async function sendTestDriveEmail(data: TestDriveData) {
+export async function sendTestDriveEmail(data: TestDriveFormData) {
   try {
-    const { name, phone, date, time, location, notes } = data;
+    // Validate data on the server side using Zod
+    const validationResult = await TestDriveSchema.safeParseAsync(data);
+    
+    if (!validationResult.success) {
+      console.error("Server validation error:", validationResult.error);
+      return { success: false, error: "Data form tidak valid" };
+    }
+
+    const { name, phone, date, time, location, notes } = validationResult.data;
     
     // Note: If using Resend free tier without a verified domain, 
     // you MUST send to the email address associated with your Resend account.
@@ -24,7 +35,7 @@ export async function sendTestDriveEmail(data: TestDriveData) {
     const { data: responseData, error } = await resend.emails.send({
       from: "Jaecoo Medan <onboarding@resend.dev>", 
       to: [recipientEmail],
-      subject: `[LEAD BARU] Booking Test Drive - ${name}`,
+      subject: `[LEAD BARU] Booking Test Drive - ${escapeHtml(name)}`,
       html: `
         <h2>Permintaan Booking Test Drive Baru</h2>
         <p>Anda mendapatkan prospek test drive baru dari website.</p>
@@ -32,27 +43,27 @@ export async function sendTestDriveEmail(data: TestDriveData) {
         <table border="1" cellpadding="8" style="border-collapse: collapse;">
             <tr>
                 <td><strong>Nama</strong></td>
-                <td>${name}</td>
+                <td>${escapeHtml(name)}</td>
             </tr>
             <tr>
                 <td><strong>No. WhatsApp</strong></td>
-                <td>${phone}</td>
+                <td>${escapeHtml(phone)}</td>
             </tr>
             <tr>
                 <td><strong>Tanggal</strong></td>
-                <td>${date}</td>
+                <td>${escapeHtml(date)}</td>
             </tr>
             <tr>
                 <td><strong>Waktu</strong></td>
-                <td>${time || "Tidak ditentukan"}</td>
+                <td>${time ? escapeHtml(time) : "Tidak ditentukan"}</td>
             </tr>
             <tr>
                 <td><strong>Lokasi</strong></td>
-                <td>${location || "Tidak ditentukan"}</td>
+                <td>${location ? escapeHtml(location) : "Tidak ditentukan"}</td>
             </tr>
             <tr>
                 <td><strong>Catatan</strong></td>
-                <td>${notes || "-"}</td>
+                <td>${notes ? escapeHtml(notes) : "-"}</td>
             </tr>
         </table>
         <br />
