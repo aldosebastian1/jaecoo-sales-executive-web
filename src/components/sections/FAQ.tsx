@@ -108,7 +108,7 @@ export default function FAQ() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent from-60% to-[#FAFAFA]" />
       </div>
 
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-[60px] relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-[60px] relative z-10">
         
         {/* Header Section (Left Aligned) */}
         <ScrollReveal variant="slide-up">
