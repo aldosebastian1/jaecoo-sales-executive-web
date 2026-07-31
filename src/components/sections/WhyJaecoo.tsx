@@ -31,7 +31,7 @@ const cards = [
 
 export default function WhyJaecoo() {
   return (
-    <section id="why-jaecoo" className="w-full py-16 md:py-20 px-4 sm:px-6 md:px-[60px] relative bg-white overflow-hidden">
+    <section id="why-jaecoo" className="w-full py-16 md:py-20 px-4 sm:px-8 md:px-[60px] relative bg-white overflow-hidden">
       {/* Background Image with Fixed Height */}
       <div className="absolute top-0 left-0 w-full h-[600px] bg-[url('/images/why-jaecoo/why-jaecoo-bg.png')] bg-cover bg-top bg-no-repeat">
         {/* Thick Gradient Fade - Absolute bottom edge of the background */}
