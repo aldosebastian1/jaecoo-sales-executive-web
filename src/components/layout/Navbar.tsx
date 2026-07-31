@@ -64,6 +64,20 @@ const Navbar: React.FC = () => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
+  const handleHashClick = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+    if (pathname === '/') {
+      e.preventDefault();
+      const element = document.querySelector(hash);
+      if (element) {
+        const yOffset = -72; // Adjust for navbar height
+        const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+      setIsMenuOpen(false); // Close mobile menu if open
+    }
+  };
+
+
   return (
     <motion.header 
       initial={{ opacity: 0 }}
@@ -73,9 +87,18 @@ const Navbar: React.FC = () => {
     >
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center h-[72px]">
-          {/* Logo */}
           <div className="flex-shrink-0 flex items-center relative w-[160px] h-12">
-            <Link href="/" className="block w-full h-full relative" aria-label="Beranda Jaecoo Medan">
+            <Link 
+              href="/" 
+              onClick={(e) => {
+                if (pathname === '/') {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }}
+              className="block w-full h-full relative" 
+              aria-label="Beranda Jaecoo Medan"
+            >
               <Image alt="Jaecoo Logo" fill sizes="140px" className="object-contain object-left" src="/icons/jaecoo-logo-black.avif" />
             </Link>
           </div>
@@ -101,6 +124,7 @@ const Navbar: React.FC = () => {
             </Link>
             <Link
               href="#why-jaecoo"
+              onClick={(e) => handleHashClick(e, '#why-jaecoo')}
               className={clsx(
                 'font-inter font-medium tracking-[0.06em] py-2 transition-all duration-200 text-base',
                 isActive('#why-jaecoo') 
@@ -112,6 +136,7 @@ const Navbar: React.FC = () => {
             </Link>
             <Link
               href="#katalog"
+              onClick={(e) => handleHashClick(e, '#katalog')}
               className={clsx(
                 'font-inter font-medium tracking-[0.06em] py-2 transition-all duration-200 text-base',
                 isActive('#katalog') 
@@ -123,6 +148,7 @@ const Navbar: React.FC = () => {
             </Link>
             <Link
               href="#faq"
+              onClick={(e) => handleHashClick(e, '#faq')}
               className={clsx(
                 'font-inter font-medium tracking-[0.06em] py-2 transition-all duration-200 text-base',
                 isActive('#faq') 
@@ -134,6 +160,7 @@ const Navbar: React.FC = () => {
             </Link>
             <Link
               href="#test-drive"
+              onClick={(e) => handleHashClick(e, '#test-drive')}
               className={clsx(
                 'font-inter font-medium tracking-[0.06em] py-2 transition-all duration-200 text-base',
                 isActive('#test-drive') 
@@ -208,7 +235,7 @@ const Navbar: React.FC = () => {
               </Link>
               <Link
                 href="#why-jaecoo"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => handleHashClick(e, '#why-jaecoo')}
                 className={clsx(
                   'block px-4 py-3.5 rounded-lg text-center font-inter text-sm font-semibold uppercase tracking-wider transition-all duration-200',
                   isActive('#why-jaecoo') ? 'bg-primary-light text-primary' : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
@@ -218,7 +245,7 @@ const Navbar: React.FC = () => {
               </Link>
               <Link
                 href="#katalog"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => handleHashClick(e, '#katalog')}
                 className={clsx(
                   'block px-4 py-3.5 rounded-lg text-center font-inter text-sm font-semibold uppercase tracking-wider transition-all duration-200',
                   isActive('#katalog') ? 'bg-primary-light text-primary' : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
@@ -228,7 +255,7 @@ const Navbar: React.FC = () => {
               </Link>
               <Link
                 href="#faq"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => handleHashClick(e, '#faq')}
                 className={clsx(
                   'block px-4 py-3.5 rounded-lg text-center font-inter text-sm font-semibold uppercase tracking-wider transition-all duration-200',
                   isActive('#faq') ? 'bg-primary-light text-primary' : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
@@ -238,7 +265,7 @@ const Navbar: React.FC = () => {
               </Link>
               <Link
                 href="#test-drive"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => handleHashClick(e, '#test-drive')}
                 className={clsx(
                   'block px-4 py-3.5 rounded-lg text-center font-inter text-sm font-semibold uppercase tracking-wider transition-all duration-200',
                   isActive('#test-drive') ? 'bg-primary-light text-primary' : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
