@@ -2,41 +2,41 @@ import React from 'react';
 import Image from 'next/image';
 import ScrollReveal from '../ui/ScrollReveal';
 
-export default function WhyJaecoo() {
-  const cards = [
-    {
-      id: 1,
-      title: "Desain Premium",
-      description: "Estetika modern yang memadukan garis tegas dan proporsi elegan, menciptakan kehadiran yang tak terlupakan di jalan.",
-      image: "/images/why-jaecoo/card-feature.jpeg"
-    },
-    {
-      id: 2,
-      title: "Teknologi Cerdas",
-      description: "Dilengkapi dengan sistem AR-HUD, layar sentuh interaktif, dan fitur keselamatan ADAS mutakhir.",
-      image: "/images/why-jaecoo/card-feature.jpeg"
-    },
-    {
-      id: 3,
-      title: "Performa Tangguh",
-      description: "Sistem penggerak AWD cerdas (ARDIS) yang siap menaklukkan berbagai medan dari perkotaan hingga off-road ringan.",
-      image: "/images/why-jaecoo/card-feature.jpeg"
-    },
-    {
-      id: 4,
-      title: "Garansi Panjang",
-      description: "Ketenangan pikiran dengan garansi mesin 10 tahun dan layanan roadside assistance 24/7.",
-      image: "/images/why-jaecoo/card-feature.jpeg"
-    }
-  ];
+const cards = [
+  {
+    id: 1,
+    title: "Desain Premium",
+    description: "Estetika modern yang memadukan garis tegas dan proporsi elegan, menciptakan kehadiran yang tak terlupakan di jalan.",
+    image: "/images/why-jaecoo/card-feature.jpeg"
+  },
+  {
+    id: 2,
+    title: "Teknologi Cerdas",
+    description: "Dilengkapi dengan sistem AR-HUD, layar sentuh interaktif, dan fitur keselamatan ADAS mutakhir.",
+    image: "/images/why-jaecoo/card-feature.jpeg"
+  },
+  {
+    id: 3,
+    title: "Performa Tangguh",
+    description: "Sistem penggerak AWD cerdas (ARDIS) yang siap menaklukkan berbagai medan dari perkotaan hingga off-road ringan.",
+    image: "/images/why-jaecoo/card-feature.jpeg"
+  },
+  {
+    id: 4,
+    title: "Garansi Panjang",
+    description: "Ketenangan pikiran dengan garansi mesin 10 tahun dan layanan roadside assistance 24/7.",
+    image: "/images/why-jaecoo/card-feature.jpeg"
+  }
+];
 
+export default function WhyJaecoo() {
   return (
     <section id="why-jaecoo" className="w-full py-16 md:py-20 px-4 sm:px-6 md:px-[60px] relative bg-white overflow-hidden">
       {/* Background Image with Fixed Height */}
-      <div className="absolute top-0 left-0 w-full h-[600px] bg-[url('/images/why-jaecoo/why-jaecoo-bg.png')] bg-cover bg-top bg-no-repeat"></div>
-      
-      {/* Thick Gradient Fade - Only at the absolute bottom edge (150px) */}
-      <div className="absolute top-[450px] left-0 w-full h-[150px] bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+      <div className="absolute top-0 left-0 w-full h-[600px] bg-[url('/images/why-jaecoo/why-jaecoo-bg.png')] bg-cover bg-top bg-no-repeat">
+        {/* Thick Gradient Fade - Absolute bottom edge of the background */}
+        <div className="absolute bottom-0 left-0 w-full h-[150px] bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+      </div>
 
       <div className="max-w-[1440px] mx-auto relative z-10">
         {/* Header Section */}
