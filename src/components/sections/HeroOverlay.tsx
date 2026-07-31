@@ -6,21 +6,21 @@ import HeroLeadCTA from '@/components/forms/HeroLeadCTA';
 export default function HeroOverlay() {
   return (
     <div className="relative z-20 max-w-[1440px] w-full h-full mx-auto px-4 sm:px-[60px] flex flex-col justify-center items-start pt-0 pb-32">
-      <div className="w-full max-w-2xl flex flex-col items-start text-left">
+    <div className="w-full max-w-2xl flex flex-col items-start text-left -mt-12 md:-mt-20">
         <ScrollReveal priority variant="slide-right-short" delay={0.1} className="w-full flex flex-col items-start text-left">
-          <div className="inline-flex mb-4 pt-6">
-            <span className="font-geist bg-primary text-white px-4 py-1.5 rounded-full text-[12px] md:text-[14px] font-semibold uppercase tracking-[0.15em] shadow-sm">
+          <div className="inline-flex mb-3">
+            <span className="font-geist text-primary text-[12px] md:text-[14px] font-semibold uppercase tracking-[0.15em]">
               SUV PREMIUM UNTUK GAYA HIDUP MODERN
             </span>
           </div>
-          <h1 className="font-geist font-light text-5xl md:text-[84px] text-gray-900 mb-6 tracking-[-0.03em] leading-none whitespace-nowrap">
+          <h1 className="font-geist font-light text-5xl md:text-[84px] text-gray-900 mb-5 md:mb-6 tracking-[-0.03em] leading-[0.95] whitespace-nowrap">
             JAECOO J5 EV
           </h1>
-          <p className="font-geist font-normal text-gray-800 text-[15px] md:text-[18px] leading-[1.6] mb-10 w-full max-w-lg">
+          <p className="font-geist font-normal text-gray-800 text-[15px] md:text-[18px] leading-[1.6] mb-10 md:mb-12 w-full max-w-lg">
             Teknologi cerdas. Performa buas. Dibuat untuk mereka yang tidak pernah puas dengan standar biasa.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-start">
-            <Link href="#katalog" className="font-geist bg-primary text-white px-7 py-3 text-[16px] font-semibold tracking-[0.02em] rounded-full w-full sm:w-auto text-center hover:bg-[#0c626a] transition-all duration-300">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-5 w-full sm:w-auto justify-start">
+            <Link href="#katalog" className="font-geist bg-primary text-white px-7 py-3 md:py-3.5 text-[16px] font-semibold tracking-[0.02em] rounded-full w-full sm:w-auto text-center hover:bg-[#0c626a] transition-all duration-300">
               JELAJAHI MODEL
             </Link>
             <HeroLeadCTA />
@@ -29,7 +29,7 @@ export default function HeroOverlay() {
       </div>
 
       {/* Value Section (Absolute Bottom to guarantee 4px gap with Badge Slider) */}
-      <div className="absolute bottom-[44px] left-0 w-full flex justify-center px-4 sm:px-[60px]">
+      <div className="absolute bottom-[56px] left-0 w-full flex justify-center px-4 sm:px-[60px]">
         <ScrollReveal priority variant="slide-up" delay={0.3}>
           <div className="bg-black/40 backdrop-blur-md rounded-[3rem] md:rounded-full w-fit mx-auto flex flex-wrap md:flex-nowrap justify-center items-center gap-6 md:gap-12 px-8 md:px-12 py-5 md:py-6">
             <div className="flex items-center gap-4">
