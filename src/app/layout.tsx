@@ -1,3 +1,4 @@
+import React from 'react';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from 'next';
@@ -146,7 +147,7 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning className={`min-h-screen flex flex-col bg-white text-gray-800 antialiased selection:bg-primary selection:text-white overflow-x-hidden ${inter.variable} ${montserrat.variable} ${poppins.variable} ${geist.variable} font-inter`}>
         {config.analytics.enabled && (config.analytics.gaId || config.analytics.measurementId) && (
-          <>
+          <React.Fragment key="analytics-scripts">
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${config.analytics.gaId || config.analytics.measurementId}`}
               strategy="lazyOnload"
@@ -159,17 +160,23 @@ export default function RootLayout({
                 gtag('config', '${config.analytics.gaId || config.analytics.measurementId}');
               `}
             </Script>
-          </>
+          </React.Fragment>
         )}
-        <NextTopLoader color="#0F7A83" showSpinner={false} />
+        {/* Wrapper UI untuk menghindari bug 'missing key' dari OuterLayoutRouter di Next.js */}
+        <div id="app-layout" className="flex flex-col min-h-screen w-full">
+          <NextTopLoader color="#0F7A83" showSpinner={false} />
+          <Navbar />
+          <main className="flex-1 w-full">{children}</main>
+          <Footer />
+        </div>
 
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
         <FloatingWhatsAppToggle />
 
-        <SpeedInsights />
-        <Analytics />
+        {/* Wrapper untuk Analytics agar tidak tercampur dalam reconciliation Next.js */}
+        <div id="vercel-metrics" style={{ display: 'none' }} key="vercel-metrics">
+          <SpeedInsights />
+          <Analytics />
+        </div>
       </body>
     </html>
   );
