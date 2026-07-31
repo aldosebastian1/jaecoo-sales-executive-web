@@ -53,7 +53,7 @@ export default function CustomerJourney() {
         />
       </div>
 
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-[60px] relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-[60px] relative z-10">
         {/* Header Section */}
         <ScrollReveal variant="slide-up">
           <div className="flex flex-col items-start text-left">
@@ -122,7 +122,7 @@ export default function CustomerJourney() {
         </div>
       </div>
 
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-[60px] relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-[60px] relative z-10">
         {/* Long Card Bottom */}
         <ScrollReveal variant="slide-up" delay={0.4}>
           <div className="relative w-full rounded-[1.5rem] overflow-hidden flex flex-col shadow-lg bg-[#FAFAFA]">
