@@ -30,7 +30,7 @@ export default function VehicleCatalog() {
         />
       </div>
 
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-[60px] relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-[60px] relative z-10">
         <ScrollReveal variant="slide-up">
           <div className="flex flex-col items-start mb-12">
             <span className="font-geist text-primary text-[12px] md:text-[14px] font-semibold uppercase tracking-[0.2em] block mb-3">
