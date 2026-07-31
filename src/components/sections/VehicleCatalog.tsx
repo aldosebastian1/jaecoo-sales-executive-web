@@ -61,14 +61,14 @@ export default function VehicleCatalog() {
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
-              <div className="pt-0 pb-0 px-5 -mt-2 relative z-10 flex justify-between items-start gap-3 lg:gap-2">
-                <div className="flex flex-col gap-1 text-left">
+              <div className="pt-4 pb-5 px-4 md:px-5 relative z-10 flex flex-col xs:flex-row justify-between items-start gap-2 md:gap-3 bg-white">
+                <div className="flex flex-col gap-1 text-left w-full">
                   <h3 className="font-geist font-semibold text-xl md:text-2xl text-gray-900 leading-none tracking-tight">{vehicle.name}</h3>
-                  <p className="font-geist font-medium text-primary/80 text-xs md:text-sm uppercase tracking-wider mt-0.5">{vehicle.slogan}</p>
+                  <p className="font-geist font-medium text-primary/80 text-[11px] md:text-sm uppercase tracking-wider mt-1">{vehicle.slogan}</p>
                 </div>
-                <div className="flex flex-col gap-1 text-right">
-                  <span className="font-geist font-medium text-sm md:text-base text-gray-500 leading-none">{vehicle.priceLabel}</span>
-                  <span className="font-geist font-bold text-primary text-sm md:text-lg uppercase tracking-wider mt-0.5">{vehicle.priceValue}</span>
+                <div className="flex flex-col gap-1 text-left xs:text-right w-full">
+                  <span className="font-geist font-medium text-[12px] md:text-base text-gray-500 leading-none">{vehicle.priceLabel}</span>
+                  <span className="font-geist font-bold text-primary text-[15px] md:text-lg uppercase tracking-wider mt-0.5">{vehicle.priceValue}</span>
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@ export default function VehicleCatalog() {
         </div>
 
         {/* Slider Controls Below */}
-        <div className="flex justify-center gap-4 mt-2 hidden md:flex">
+        <div className="hidden md:flex justify-center gap-4 mt-2">
           <button 
             onClick={() => scroll('left')}
             className="w-10 h-10 rounded-full bg-primary border border-primary flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all duration-300 shadow-sm"
