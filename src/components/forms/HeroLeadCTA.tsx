@@ -50,7 +50,7 @@ export default function HeroLeadCTA() {
     <>
       <button 
         onClick={() => setIsOpen(true)} 
-        className="font-geist bg-white text-gray-900 border border-transparent hover:border-white hover:bg-primary hover:text-white px-7 py-3 text-[16px] font-medium rounded-full w-full sm:w-auto text-center transition-all duration-300"
+        className="font-geist flex-1 sm:flex-none bg-white text-gray-900 border border-transparent hover:border-white hover:bg-primary hover:text-white px-2 py-3 md:px-7 md:py-3.5 text-[11px] md:text-[16px] font-semibold tracking-[0.02em] rounded-full text-center transition-all duration-300 flex items-center justify-center"
       >
         TEST DRIVE
       </button>
