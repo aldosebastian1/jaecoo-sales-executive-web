@@ -7,8 +7,23 @@ import { motion } from 'framer-motion';
 import { getSimpleWALink } from '@/lib/whatsapp';
 import WhatsAppButton from '@/components/widgets/WhatsAppButton';
 import LocationPopup from '@/components/ui/LocationPopup';
+import { usePathname } from 'next/navigation';
 
 const Footer: React.FC = () => {
+  const pathname = usePathname();
+
+  const handleHashClick = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+    if (pathname === '/') {
+      e.preventDefault();
+      const element = document.querySelector(hash);
+      if (element) {
+        const yOffset = -72; // Adjust for navbar height
+        const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <motion.footer 
       initial={{ opacity: 0, y: 30 }}
@@ -31,7 +46,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 xl:px-10 relative z-10">
-        <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-4 xl:gap-10 mb-6">
+        <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-4 xl:gap-10 mb-6">
           
           {/* Column 1: Brand, Desc, Social */}
           <div className="flex flex-col items-start lg:max-w-[280px] xl:max-w-[320px]">
@@ -74,17 +89,17 @@ const Footer: React.FC = () => {
             </h3>
             <ul className="flex flex-col space-y-2">
               <li>
-                <Link href="#katalog" className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
+                <Link href="#katalog" onClick={(e) => handleHashClick(e, '#katalog')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
                   Jaecoo J5
                 </Link>
               </li>
               <li>
-                <Link href="#katalog" className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
+                <Link href="#katalog" onClick={(e) => handleHashClick(e, '#katalog')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
                   Jaecoo J7
                 </Link>
               </li>
               <li>
-                <Link href="#katalog" className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
+                <Link href="#katalog" onClick={(e) => handleHashClick(e, '#katalog')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
                   Jaecoo J8
                 </Link>
               </li>
@@ -98,17 +113,17 @@ const Footer: React.FC = () => {
             </h3>
             <ul className="flex flex-col space-y-2">
               <li>
-                <Link href="#booking" className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
+                <Link href="#booking" onClick={(e) => handleHashClick(e, '#test-drive')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
                   Test Drive
                 </Link>
               </li>
               <li>
-                <Link href="#service" className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
+                <Link href="#service" onClick={(e) => handleHashClick(e, '#service')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
                   Service
                 </Link>
               </li>
               <li>
-                <Link href="#garansi" className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
+                <Link href="#garansi" onClick={(e) => handleHashClick(e, '#garansi')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
                   Garansi
                 </Link>
               </li>
@@ -122,7 +137,7 @@ const Footer: React.FC = () => {
             </h3>
             <ul className="flex flex-col space-y-2">
               <li>
-                <Link href="#tentang-kami" className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
+                <Link href="#tentang-kami" onClick={(e) => handleHashClick(e, '#tentang-kami')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
                   Tentang Kami
                 </Link>
               </li>
@@ -132,7 +147,7 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#faq" className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
+                <Link href="#faq" onClick={(e) => handleHashClick(e, '#faq')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
                   FAQ
                 </Link>
               </li>
@@ -190,7 +205,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Copyright Bar */}
-        <div className="border-t border-gray-900 pt-4 mt-4 flex flex-col md:flex-row items-center justify-between gap-3">
+        <div className="border-t border-gray-200 pt-4 mt-4 flex flex-col md:flex-row items-center md:items-start justify-between gap-3">
           <div className="font-inter text-xs text-gray-700 text-center md:text-left font-medium tracking-wide">
             Hak Cipta © {new Date().getFullYear()} Jaecoo Medan. Seluruh Hak Dilindungi.
           </div>
