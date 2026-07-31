@@ -14,7 +14,7 @@ export default function TestDriveSection() {
             <div className="absolute bottom-0 left-0 w-full h-24 md:h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
         </div>
 
-        <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-[60px] flex flex-col lg:flex-row justify-between gap-10 items-stretch">
+        <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-8 md:px-[60px] flex flex-col lg:flex-row justify-between gap-10 items-stretch">
             {/* Left Side: Typography (60%) */}
             <div className="w-full lg:w-[50%] xl:w-[55%] 2xl:w-[60%] flex flex-col justify-between">
                 <ScrollReveal delay={0.1} variant="slide-up">
@@ -39,7 +39,7 @@ export default function TestDriveSection() {
         </div>
 
         {/* 3 Columns Info Grid (Outside Form Grid but visually aligned to left) */}
-        <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-[60px] mt-12 md:mt-16">
+        <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-8 md:px-[60px] mt-12 md:mt-16">
             <div className="w-full lg:w-[50%] xl:w-[55%] 2xl:w-[60%] pl-4 lg:pl-8">
                 <ScrollReveal delay={0.2} variant="slide-up">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 lg:gap-6">
