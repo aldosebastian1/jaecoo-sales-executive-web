@@ -2,21 +2,22 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 import { heroSlides } from '@/data/hero-slider';
 
 export default function HeroSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Auto-play logic that resets when currentIndex changes (e.g. manual click/swipe)
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % heroSlides.length);
-    }, 8000); // 8 seconds per slide to avoid blocking initial Lighthouse measurement
+    }, 8000); 
 
     return () => clearInterval(timer);
-  }, []);
+  }, [currentIndex]);
 
-  const handleDragEnd = (event: any, info: any) => {
+  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const swipeThreshold = 50;
     if (info.offset.x < -swipeThreshold) {
       // Swipe left -> next slide
@@ -64,7 +65,7 @@ export default function HeroSlider() {
         </AnimatePresence>
       </div>
       
-      <div className="absolute bottom-[33px] left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
+      <div className="absolute bottom-[45px] left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
         <div className="flex gap-2 items-center">
           {heroSlides.map((_, idx) => (
             <button 
