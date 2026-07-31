@@ -78,7 +78,7 @@ export default function CustomerJourney() {
               <ScrollReveal variant="fade-in" delay={index * 0.1} className="w-full flex-1 relative z-10">
                 <div className="relative bg-[#FAFAFA] border border-gray-100 rounded-3xl overflow-hidden h-full flex flex-col items-start text-left shadow-sm hover:shadow-md transition-shadow duration-300">
                   {/* Image Container with Badge */}
-                  <div className="relative w-full h-[140px] xl:h-[130px] overflow-hidden shrink-0">
+                  <div className="relative w-full h-[180px] md:h-[160px] xl:h-[130px] overflow-hidden shrink-0">
                     {/* Badge */}
                     <div className="absolute top-0 left-0 w-8 h-8 bg-primary text-white flex items-center justify-center font-geist font-medium text-sm rounded-br-2xl shadow-sm z-10">
                       {step.id}
@@ -141,10 +141,10 @@ export default function CustomerJourney() {
             
             
             {/* Content constrained to left area */}
-            <div className="relative z-10 p-5 lg:p-6 xl:p-7 w-full xl:w-[80%] 2xl:w-[75%] flex flex-col xl:flex-row items-center justify-start gap-4 xl:gap-6">
+            <div className="relative z-10 p-6 lg:p-6 xl:p-7 w-full xl:w-[80%] 2xl:w-[75%] flex flex-col xl:flex-row items-center xl:items-start justify-start gap-5 xl:gap-6 text-center xl:text-left">
               
               {/* Text on the left */}
-              <div className="text-left shrink-0">
+              <div className="shrink-0 w-full">
                 <h3 className="font-geist font-medium text-2xl md:text-[26px] xl:text-[28px] leading-tight mb-2 tracking-tight">
                   <span className="text-[#5CE1E6]">Siap Memulai</span> <br className="hidden xl:block" /> <span className="text-white">Perjalanan Anda?</span>
                 </h3>
@@ -154,17 +154,17 @@ export default function CustomerJourney() {
               </div>
               
               {/* Buttons on the right, but still within the 60% block */}
-              <div className="flex flex-row gap-3 w-auto shrink-0">
+              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto shrink-0 justify-center xl:justify-start">
                 <Link 
                   href="#test-drive"
-                  className="font-geist flex items-center justify-center bg-primary text-white px-[17px] py-[9px] text-[12px] font-semibold tracking-[0.02em] rounded-full text-center hover:bg-[#0c626a] transition-all duration-300 whitespace-nowrap shadow-sm"
+                  className="font-geist flex items-center justify-center bg-primary text-white px-[17px] py-3 xl:py-[9px] text-[13px] xl:text-[12px] font-semibold tracking-[0.02em] rounded-full text-center hover:bg-[#0c626a] transition-all duration-300 shadow-sm w-full sm:w-auto"
                 >
                   BOOKING TEST DRIVE
                 </Link>
                 <WhatsAppButton 
                   href={getSimpleWALink("Halo Bastian, saya tertarik untuk konsultasi dan booking test drive mobil Jaecoo.")}
                   contentName="Customer Journey WA Button"
-                  className="font-geist flex justify-center items-center gap-2 bg-white/10 backdrop-blur-md text-white px-[17px] py-[9px] text-[12px] font-semibold tracking-[0.02em] rounded-full text-center border-[1.5px] border-white/50 hover:bg-white hover:text-gray-900 transition-all duration-300 whitespace-nowrap"
+                  className="font-geist flex justify-center items-center gap-2 bg-white/10 backdrop-blur-md text-white px-[17px] py-3 xl:py-[9px] text-[13px] xl:text-[12px] font-semibold tracking-[0.02em] rounded-full text-center border-[1.5px] border-white/50 hover:bg-white hover:text-gray-900 transition-all duration-300 w-full sm:w-auto"
                 >
                   HUBUNGI WHATSAPP
                 </WhatsAppButton>
