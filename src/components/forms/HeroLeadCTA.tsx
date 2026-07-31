@@ -63,7 +63,7 @@ export default function HeroLeadCTA() {
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                className="glass rounded-3xl p-6 sm:p-8 w-full max-w-md relative shadow-[0_20px_50px_rgba(0,0,0,0.25)] border border-white/40 overflow-hidden pointer-events-auto"
+                className="glass rounded-3xl p-6 sm:p-8 w-full max-w-sm relative shadow-[0_20px_50px_rgba(0,0,0,0.25)] border border-white/40 overflow-hidden pointer-events-auto"
               >
                 <button 
                   onClick={() => setIsOpen(false)} 
@@ -75,7 +75,7 @@ export default function HeroLeadCTA() {
                   </svg>
                 </button>
                 
-                <div className="mb-6 mt-2 text-center">
+                <div className="mb-6 mt-2 text-left">
                     <h3 className="font-montserrat font-medium text-2xl text-gray-900 uppercase tracking-wider mb-3 leading-tight">
                         Dapatkan <span className="text-primary">Penawaran</span>
                     </h3>
