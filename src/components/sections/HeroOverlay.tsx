@@ -5,7 +5,7 @@ import HeroLeadCTA from '@/components/forms/HeroLeadCTA';
 
 export default function HeroOverlay() {
   return (
-    <div className="relative z-20 max-w-[1440px] w-full h-full mx-auto px-4 sm:px-[60px] flex flex-col justify-center items-start pt-0 pb-32">
+    <div className="relative z-20 max-w-[1440px] w-full h-full mx-auto px-4 sm:px-8 md:px-[60px] flex flex-col justify-center items-start pt-0 pb-32">
     <div className="w-full max-w-2xl flex flex-col items-start text-left -mt-12 md:-mt-20">
         <ScrollReveal priority variant="slide-right-short" delay={0.1} className="w-full flex flex-col items-start text-left">
           <div className="inline-flex mb-3">
@@ -29,7 +29,7 @@ export default function HeroOverlay() {
       </div>
 
       {/* Value Section (Absolute Bottom to guarantee 4px gap with Badge Slider) */}
-      <div className="absolute bottom-[56px] left-0 w-full flex justify-center px-4 sm:px-[60px]">
+      <div className="absolute bottom-[56px] left-0 w-full flex justify-center px-4 sm:px-8 md:px-[60px]">
         <ScrollReveal priority variant="slide-up" delay={0.3}>
           <div className="bg-black/40 backdrop-blur-md rounded-[3rem] md:rounded-full w-fit mx-auto flex flex-wrap md:flex-nowrap justify-center items-center gap-6 md:gap-12 px-8 md:px-12 py-5 md:py-6">
             <div className="flex items-center gap-4">
