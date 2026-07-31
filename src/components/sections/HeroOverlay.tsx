@@ -5,7 +5,7 @@ import HeroLeadCTA from '@/components/forms/HeroLeadCTA';
 
 export default function HeroOverlay() {
   return (
-    <div className="relative z-20 max-w-[1440px] w-full h-full mx-auto px-4 sm:px-8 md:px-[60px] flex flex-col justify-start md:justify-center items-start pt-[120px] md:pt-0 pb-[190px] md:pb-32">
+    <div className="relative z-20 max-w-[1440px] w-full h-full mx-auto px-4 sm:px-8 md:px-[60px] flex flex-col justify-start md:justify-center items-start pt-[170px] md:pt-0 pb-[190px] md:pb-32">
       <div className="w-full max-w-2xl h-full md:h-auto flex flex-col mt-0 md:-mt-20">
         <ScrollReveal priority variant="slide-right-short" delay={0.1} className="w-full h-full md:h-auto flex flex-col justify-between md:justify-start items-start text-left">
           <div>
@@ -21,7 +21,7 @@ export default function HeroOverlay() {
               Teknologi cerdas. Performa buas. Dibuat untuk mereka yang tidak pernah puas dengan standar biasa.
             </p>
           </div>
-          <div className="flex flex-row gap-2 sm:gap-4 md:gap-5 w-full sm:w-auto justify-start mt-0 md:mt-0">
+          <div className="flex flex-row gap-2 sm:gap-4 md:gap-5 w-full sm:w-auto justify-start mb-[5px] md:mb-0">
             <Link href="#katalog" className="font-geist flex-1 sm:flex-none bg-primary text-white px-2 py-3 md:px-7 md:py-3.5 text-[11px] md:text-[16px] font-semibold tracking-[0.02em] rounded-full text-center hover:bg-[#0c626a] transition-all duration-300 flex items-center justify-center">
               JELAJAHI MODEL
             </Link>
