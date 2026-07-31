@@ -65,7 +65,7 @@ export default function HeroSlider() {
         </AnimatePresence>
       </div>
       
-      <div className="absolute bottom-[45px] left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
+      <div className="absolute bottom-[60px] md:bottom-[80px] left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
         <div className="flex gap-2 items-center">
           {heroSlides.map((_, idx) => (
             <button 
