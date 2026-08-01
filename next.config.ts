@@ -1,8 +1,6 @@
 import type { NextConfig } from 'next';
 import withBundleAnalyzer from '@next/bundle-analyzer';
 
-
-
 const securityHeaders = [
   { key: 'X-DNS-Prefetch-Control', value: 'on' },
   { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
@@ -17,7 +15,6 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
     formats: ['image/avif', 'image/webp'],
-    qualities: [75, 85, 100],
     unoptimized: process.env.NODE_ENV === 'development',
     remotePatterns: [
       {
