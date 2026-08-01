@@ -92,7 +92,6 @@ export default function CustomerJourney() {
                     <Image 
                       src={step.image} 
                       alt={step.title}
-                      priority
                       fill
                       sizes="(max-width: 1280px) 100vw, 33vw"
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" 
@@ -157,7 +156,7 @@ export default function CustomerJourney() {
               <div className="flex flex-row gap-2 sm:gap-3 w-full sm:w-auto shrink-0 mt-2 xl:mt-0 justify-start">
                 <Link 
                   href="#test-drive"
-                  className="font-geist flex-1 sm:flex-none flex items-center justify-center bg-primary text-white px-2 sm:px-[20px] xl:px-[17px] py-3 xl:py-[9px] text-[10px] sm:text-[13px] xl:text-[12px] font-semibold tracking-[0.02em] rounded-full text-center hover:bg-[#0c626a] transition-all duration-300 shadow-sm"
+                  className="font-geist flex-1 sm:flex-none flex items-center justify-center bg-primary text-white px-2 sm:px-[20px] xl:px-[17px] py-3 xl:py-[9px] text-[10px] sm:text-[13px] xl:text-[12px] font-semibold tracking-[0.02em] rounded-full text-center hover:bg-primary-800 transition-all duration-300 shadow-sm"
                 >
                   BOOKING TEST DRIVE
                 </Link>
