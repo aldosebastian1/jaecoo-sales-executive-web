@@ -6,18 +6,20 @@ node_modules/
 # Testing
 /coverage
 
-# Production
-/.next
+# Production / Next.js
+/.next/
 /build
-/out
+/out/
 *.tgz
 
-# Misc
-.DS_Store
+# Security & Env
 *.pem
-.env
-.env.local
-.env.*.local
+.env*
+!.env.example
+
+# Misc / OS
+.DS_Store
+Thumbs.db
 
 # Debug
 npm-debug.log*
@@ -27,11 +29,7 @@ pnpm-debug.log*
 *.log
 .eslintcache
 
-# Local env files
-.env.local
-.env.*.local
-
-# Editor directories and files
+# IDE / Editor
 .vscode/
 .idea/
 *.suo
@@ -42,20 +40,8 @@ pnpm-debug.log*
 .swp
 .swo
 
-# IDE
-.vscode
-.idea
-
-# OS
-.DS_Store
-Thumbs.db
-
 # Vercel
-.vercel
-
-# Next.js
-.next/
-out/
+.vercel/
 
 # TypeScript
 *.tsbuildinfo
@@ -73,10 +59,8 @@ docs/CODE_ARCHITECTURE_AUDIT.md
 docs/PRE-LAUNCH-WORKFLOW.md
 
 # AI Agents & Skills Configuration
-.agents
-agent
+.agents/
+agent/
 .antigravitycli/
 skills-lock.json
 panduan_setup_proyek_baru.md
-.vercel
-.env*
