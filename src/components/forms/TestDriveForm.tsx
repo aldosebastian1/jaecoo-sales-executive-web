@@ -119,9 +119,9 @@ export default function TestDriveForm() {
                 </div>
                 
                 {/* Nama & Telepon */}
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-3">
                     <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
+                        <div className="absolute inset-y-0 top-0 h-[46px] left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                         </div>
                         <input 
@@ -131,13 +131,19 @@ export default function TestDriveForm() {
                             value={formData.name}
                             onChange={handleChange}
                             placeholder="Nama Lengkap"
-                            className={`w-full bg-gray-50/50 border ${errors.name ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm py-3 pl-10 pr-3 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors`} 
+                            className={`w-full h-[46px] bg-gray-50/50 border ${errors.name ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm py-3 pl-10 pr-3 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors`} 
                         />
-                        {errors.name && <p className="text-red-500 text-xs mt-1 absolute -bottom-5">{errors.name}</p>}
+                        <AnimatePresence>
+                          {errors.name && (
+                            <motion.p initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="text-red-500 text-[11px] sm:text-xs mt-1.5 pl-1 leading-snug">
+                              {errors.name}
+                            </motion.p>
+                          )}
+                        </AnimatePresence>
                     </div>
                     
                     <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
+                        <div className="absolute inset-y-0 top-0 h-[46px] left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         </div>
                         <input 
@@ -147,16 +153,22 @@ export default function TestDriveForm() {
                             value={formData.phone}
                             onChange={handleChange}
                             placeholder="No. WhatsApp Aktif"
-                            className={`w-full bg-gray-50/50 border ${errors.phone ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm py-3 pl-10 pr-3 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors`} 
+                            className={`w-full h-[46px] bg-gray-50/50 border ${errors.phone ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm py-3 pl-10 pr-3 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors`} 
                         />
-                        {errors.phone && <p className="text-red-500 text-xs mt-1 absolute -bottom-5">{errors.phone}</p>}
+                        <AnimatePresence>
+                          {errors.phone && (
+                            <motion.p initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="text-red-500 text-[11px] sm:text-xs mt-1.5 pl-1 leading-snug">
+                              {errors.phone}
+                            </motion.p>
+                          )}
+                        </AnimatePresence>
                     </div>
                 </div>
 
                 {/* Tanggal & Waktu (Grid 2 kolom) */}
-                <div className="grid grid-cols-2 gap-3 pt-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-3 pt-2">
                     <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
+                        <div className="absolute inset-y-0 top-0 h-[46px] left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                         </div>
                         <input 
@@ -165,12 +177,18 @@ export default function TestDriveForm() {
                             name="date"
                             value={formData.date}
                             onChange={handleChange}
-                            className={`w-full bg-gray-50/50 border ${errors.date ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm py-3 pl-10 pr-3 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:left-0 [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:cursor-pointer`} 
+                            className={`w-full h-[46px] bg-gray-50/50 border ${errors.date ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm py-3 pl-10 pr-3 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:left-0 [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:cursor-pointer`} 
                         />
-                        {errors.date && <p className="text-red-500 text-xs mt-1 absolute -bottom-5">{errors.date}</p>}
+                        <AnimatePresence>
+                          {errors.date && (
+                            <motion.p initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="text-red-500 text-[11px] sm:text-xs mt-1.5 pl-1 leading-snug">
+                              {errors.date}
+                            </motion.p>
+                          )}
+                        </AnimatePresence>
                     </div>
                     <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400 z-10">
+                        <div className="absolute inset-y-0 top-0 h-[46px] left-0 pl-3.5 flex items-center pointer-events-none text-gray-400 z-10">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                         </div>
                         <select
@@ -178,23 +196,29 @@ export default function TestDriveForm() {
                             name="time"
                             value={formData.time}
                             onChange={handleChange}
-                            className={`w-full bg-gray-50/50 border ${errors.time ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm py-3 pl-10 pr-8 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none`}
+                            className={`w-full h-[46px] bg-gray-50/50 border ${errors.time ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm py-3 pl-10 pr-8 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none`}
                         >
                             <option value="">Waktu</option>
                             <option value="Pagi (09:00 - 12:00)">Pagi (09:00 - 12:00)</option>
                             <option value="Siang (12:00 - 15:00)">Siang (12:00 - 15:00)</option>
                             <option value="Sore (15:00 - 18:00)">Sore (15:00 - 18:00)</option>
                         </select>
-                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
+                        <div className="pointer-events-none absolute top-0 h-[46px] right-0 flex items-center px-3 text-gray-400">
                             <svg className="fill-current h-4 w-4" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                         </div>
-                        {errors.time && <p className="text-red-500 text-xs mt-1 absolute -bottom-5">{errors.time}</p>}
+                        <AnimatePresence>
+                          {errors.time && (
+                            <motion.p initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="text-red-500 text-[11px] sm:text-xs mt-1.5 pl-1 leading-snug">
+                              {errors.time}
+                            </motion.p>
+                          )}
+                        </AnimatePresence>
                     </div>
                 </div>
 
                 {/* Lokasi */}
                 <div className="relative pt-2">
-                    <div className="absolute inset-y-0 top-2 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400 z-10">
+                    <div className="absolute inset-y-0 top-2 h-[46px] left-0 pl-3.5 flex items-center pointer-events-none text-gray-400 z-10">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     </div>
                     <select
@@ -202,16 +226,22 @@ export default function TestDriveForm() {
                         name="location"
                         value={formData.location}
                         onChange={handleChange}
-                        className={`w-full bg-gray-50/50 border ${errors.location ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm py-3 pl-10 pr-8 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none`}
+                        className={`w-full h-[46px] bg-gray-50/50 border ${errors.location ? 'border-red-500' : 'border-gray-200'} text-gray-900 text-sm py-3 pl-10 pr-8 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none`}
                     >
                         <option value="">Pilih Lokasi Dealer...</option>
                         <option value="Jaecoo Medan Amplas">Jaecoo Medan Amplas (Jl. Sisingamangaraja)</option>
                         <option value="City Store Center Point">City Store Center Point Mall</option>
                     </select>
-                    <div className="pointer-events-none absolute top-2 inset-y-0 right-0 flex items-center px-3 text-gray-400">
+                    <div className="pointer-events-none absolute top-2 h-[46px] right-0 flex items-center px-3 text-gray-400">
                         <svg className="fill-current h-4 w-4" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                     </div>
-                    {errors.location && <p className="text-red-500 text-xs mt-1 absolute -bottom-5">{errors.location}</p>}
+                    <AnimatePresence>
+                      {errors.location && (
+                        <motion.p initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="text-red-500 text-[11px] sm:text-xs mt-1.5 pl-1 leading-snug">
+                          {errors.location}
+                        </motion.p>
+                      )}
+                    </AnimatePresence>
                 </div>
 
                 {/* Deskripsi Opsional */}
