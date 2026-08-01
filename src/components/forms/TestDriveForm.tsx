@@ -2,6 +2,12 @@
 
 import React, { useState } from 'react';
 import { generateWALink } from '@/lib/whatsapp';
+
+declare global {
+  interface Window {
+    gtag?: (command: string, targetId: string, config?: object) => void;
+  }
+}
 import { motion, AnimatePresence } from 'framer-motion';
 import { TestDriveSchema, validateForm } from '@/lib/validation';
 import { sendTestDriveEmail } from '@/actions/testDrive';
@@ -39,10 +45,10 @@ export default function TestDriveForm() {
       setIsSubmitting(false);
       
       // GA4 Tracking - Error Validation
-      if (typeof window !== 'undefined' && (window as any).gtag) {
+      if (typeof window !== 'undefined' && window.gtag) {
         // Collect field names that have errors
         const errorFields = Object.keys(validation.errors || {}).join(',');
-        (window as any).gtag('event', 'form_error', {
+        window.gtag('event', 'form_error', {
           event_category: 'form_validation',
           event_label: 'test_drive_form_new',
           error_fields: errorFields
@@ -53,8 +59,8 @@ export default function TestDriveForm() {
     }
 
     // GA4 Tracking
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'generate_lead', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'generate_lead', {
         event_category: 'form_submission',
         event_label: 'test_drive_form_new',
         location: formData.location
@@ -266,7 +272,7 @@ export default function TestDriveForm() {
                     disabled={isSubmitting}
                     whileTap={{ scale: 0.98 }}
                     whileHover={{ scale: 1.01 }}
-                    className="w-full bg-primary hover:bg-[#0c6269] disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-geist text-[14px] font-semibold py-3 px-5 transition-colors mt-2 rounded-full flex items-center justify-center gap-2 shadow-sm"
+                    className="w-full bg-primary hover:bg-primary-800 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-geist text-[14px] font-semibold py-3 px-5 transition-colors mt-2 rounded-full flex items-center justify-center gap-2 shadow-sm"
                 >
                     {isSubmitting ? (
                       <>
