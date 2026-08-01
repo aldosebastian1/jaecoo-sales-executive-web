@@ -46,23 +46,23 @@ const FAQCard = ({ question, answer }: { question: string; answer: string }) => 
 
   return (
     <div 
-      className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+      className="bg-white border border-gray-200 rounded-xl md:rounded-2xl p-4 md:p-5 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
       onClick={() => setIsOpen(!isOpen)}
     >
-      <div className="flex items-start gap-4">
+      <div className="flex items-start gap-3 md:gap-4">
         {/* Icon Container */}
-        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg">
+        <div className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-base md:text-lg">
           ?
         </div>
         
         {/* Content Container */}
         <div className="flex-1">
-          <div className="flex justify-between items-center gap-4">
-            <h4 className="font-geist font-medium text-gray-900 text-[15px] md:text-[16px] leading-snug">
+          <div className="flex justify-between items-center gap-3 md:gap-4">
+            <h4 className="font-geist font-medium text-gray-900 text-[14px] sm:text-[15px] md:text-[16px] leading-snug">
               {question}
             </h4>
             <button 
-              className={`flex-shrink-0 w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 transition-transform duration-300 ${isOpen ? 'rotate-90' : ''}`}
+              className={`flex-shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 transition-transform duration-300 ${isOpen ? 'rotate-90' : ''}`}
               aria-label="Toggle FAQ"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -80,7 +80,7 @@ const FAQCard = ({ question, answer }: { question: string; answer: string }) => 
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
                 className="overflow-hidden"
               >
-                <p className="font-geist font-normal text-gray-600 text-[14px] leading-relaxed">
+                <p className="font-geist font-normal text-gray-600 text-[13px] md:text-[14px] leading-relaxed pr-2">
                   {answer}
                 </p>
               </motion.div>
@@ -165,7 +165,7 @@ export default function FAQ() {
             </div>
 
             {/* Center Side: 3 Info Items */}
-            <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-start gap-4 xl:gap-6 w-full xl:w-auto py-4 xl:py-0">
+            <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-start gap-5 sm:gap-4 xl:gap-6 w-full xl:w-auto py-4 xl:py-0">
               {/* Call Center */}
               <div className="flex items-center gap-3 w-full sm:w-auto justify-start">
                 <div className="w-10 h-10 rounded-full bg-white/20 text-white flex items-center justify-center shrink-0">
@@ -173,9 +173,9 @@ export default function FAQ() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
-                <div className="text-left whitespace-nowrap">
+                <div className="text-left">
                   <h4 className="font-geist font-semibold text-[13px] text-white">Call Center</h4>
-                  <p className="font-geist font-normal text-[12px] text-white/80">0812-3456-7890</p>
+                  <p className="font-geist font-normal text-[12px] text-white/80 break-words">0812-3456-7890</p>
                 </div>
               </div>
 
@@ -186,9 +186,9 @@ export default function FAQ() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <div className="text-left whitespace-nowrap">
+                <div className="text-left">
                   <h4 className="font-geist font-semibold text-[13px] text-white">Email</h4>
-                  <p className="font-geist font-normal text-[12px] text-white/80">cs@jaecoomedan.com</p>
+                  <p className="font-geist font-normal text-[12px] text-white/80 break-words">cs@jaecoomedan.com</p>
                 </div>
               </div>
 
@@ -200,15 +200,15 @@ export default function FAQ() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <div className="text-left whitespace-nowrap">
+                <div className="text-left">
                   <h4 className="font-geist font-semibold text-[13px] text-white">Dealer</h4>
-                  <p className="font-geist font-normal text-[12px] text-white/80">Jaecoo Center Medan</p>
+                  <p className="font-geist font-normal text-[12px] text-white/80 break-words">Jaecoo Center Medan</p>
                 </div>
               </div>
             </div>
 
             {/* Right Side: Image */}
-            <div className="relative z-10 w-full xl:w-[22%] shrink-0 h-[100px] rounded-xl overflow-hidden hidden sm:block">
+            <div className="relative z-10 w-full xl:w-[22%] shrink-0 h-[100px] rounded-xl overflow-hidden block">
               <Image 
                 src="/images/step-1.png"
                 alt="Jaecoo Helpdesk"
