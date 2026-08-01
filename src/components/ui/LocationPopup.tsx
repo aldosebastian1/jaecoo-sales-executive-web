@@ -37,21 +37,21 @@ export default function LocationPopup({ children }: { children?: React.ReactNode
       {isOpen && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm" onClick={() => setIsOpen(false)}>
           <div 
-            className="bg-white rounded-2xl p-4 max-w-3xl w-full relative shadow-2xl overflow-hidden" 
+            className="bg-white rounded-2xl p-4 max-w-3xl w-full relative shadow-2xl overflow-y-auto max-h-[90vh] flex flex-col" 
             onClick={(e) => e.stopPropagation()}
           >
             <button 
               onClick={() => setIsOpen(false)}
-              className="absolute top-3 right-3 z-10 text-gray-400 hover:text-gray-900 transition-colors"
+              className="absolute top-3 right-3 z-10 text-gray-400 hover:text-gray-900 transition-colors bg-white/80 rounded-full p-1"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
             
-            <h3 className="font-geist font-medium text-lg md:text-xl text-gray-900 mb-3 pl-1 text-center md:text-left">Lokasi Dealer Jaecoo</h3>
+            <h3 className="font-geist font-medium text-lg md:text-xl text-gray-900 mb-4 pl-1 text-center md:text-left pr-6">Lokasi Dealer Jaecoo</h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 items-stretch flex-1">
               {/* Maps Iframe Area */}
-              <div className="w-full h-56 md:h-full rounded-xl overflow-hidden bg-gray-100 relative order-2 md:order-1">
+              <div className="w-full h-48 sm:h-56 md:h-full rounded-xl overflow-hidden bg-gray-100 relative order-2 md:order-1 min-h-[192px]">
                   <iframe 
                     src={MAPS[activeLocation]} 
                     width="100%" 
@@ -68,30 +68,30 @@ export default function LocationPopup({ children }: { children?: React.ReactNode
               <div className="flex flex-col gap-3 order-1 md:order-2 justify-start">
                   <button 
                     onClick={() => setActiveLocation('centerpoint')}
-                    className={`group text-left p-4 rounded-xl border transition-all duration-300 ${activeLocation === 'centerpoint' ? 'bg-primary border-primary shadow-lg shadow-primary/20' : 'bg-transparent border-primary hover:bg-primary'}`}
+                    className={`group text-left p-3.5 md:p-4 rounded-xl border transition-all duration-300 ${activeLocation === 'centerpoint' ? 'bg-primary border-primary shadow-lg shadow-primary/20' : 'bg-transparent border-primary hover:bg-primary'}`}
                   >
-                     <div className="flex justify-between items-start mb-1.5">
-                         <h4 className={`font-geist font-medium text-[15px] transition-colors ${activeLocation === 'centerpoint' ? 'text-white' : 'text-primary group-hover:text-white'}`}>City Store Center Point Mall</h4>
+                     <div className="flex justify-between items-start gap-2 mb-1.5">
+                         <h4 className={`font-geist font-medium text-[14px] sm:text-[15px] leading-tight transition-colors flex-1 ${activeLocation === 'centerpoint' ? 'text-white' : 'text-primary group-hover:text-white'}`}>City Store Center Point Mall</h4>
                          {activeLocation === 'centerpoint' && (
-                             <span className="bg-white text-primary text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-medium shrink-0 ml-2">Aktif</span>
+                             <span className="bg-white text-primary text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-bold shrink-0 mt-0.5 shadow-sm">Aktif</span>
                          )}
                      </div>
-                     <p className={`font-geist text-[13px] leading-relaxed transition-colors ${activeLocation === 'centerpoint' ? 'text-white/90' : 'text-gray-500 group-hover:text-white/90'}`}>
+                     <p className={`font-geist text-[12px] sm:text-[13px] leading-relaxed transition-colors ${activeLocation === 'centerpoint' ? 'text-white/90' : 'text-gray-500 group-hover:text-white/90'}`}>
                        Mall Centre Point Medan, Jl. Jawa No.8, Buntu, Kec. Medan Tim., Kota Medan, Sumatera Utara.
                      </p>
                   </button>
 
                   <button 
                     onClick={() => setActiveLocation('amplas')}
-                    className={`group text-left p-4 rounded-xl border transition-all duration-300 ${activeLocation === 'amplas' ? 'bg-primary border-primary shadow-lg shadow-primary/20' : 'bg-transparent border-primary hover:bg-primary'}`}
+                    className={`group text-left p-3.5 md:p-4 rounded-xl border transition-all duration-300 ${activeLocation === 'amplas' ? 'bg-primary border-primary shadow-lg shadow-primary/20' : 'bg-transparent border-primary hover:bg-primary'}`}
                   >
-                     <div className="flex justify-between items-start mb-1.5">
-                         <h4 className={`font-geist font-medium text-[15px] transition-colors ${activeLocation === 'amplas' ? 'text-white' : 'text-primary group-hover:text-white'}`}>Jaecoo Medan Amplas (3S)</h4>
+                     <div className="flex justify-between items-start gap-2 mb-1.5">
+                         <h4 className={`font-geist font-medium text-[14px] sm:text-[15px] leading-tight transition-colors flex-1 ${activeLocation === 'amplas' ? 'text-white' : 'text-primary group-hover:text-white'}`}>Jaecoo Medan Amplas (3S)</h4>
                          {activeLocation === 'amplas' && (
-                             <span className="bg-white text-primary text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-medium shrink-0 ml-2">Aktif</span>
+                             <span className="bg-white text-primary text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-bold shrink-0 mt-0.5 shadow-sm">Aktif</span>
                          )}
                      </div>
-                     <p className={`font-geist text-[13px] leading-relaxed transition-colors ${activeLocation === 'amplas' ? 'text-white/90' : 'text-gray-500 group-hover:text-white/90'}`}>
+                     <p className={`font-geist text-[12px] sm:text-[13px] leading-relaxed transition-colors ${activeLocation === 'amplas' ? 'text-white/90' : 'text-gray-500 group-hover:text-white/90'}`}>
                        Jl. Sisingamangaraja No. KM 6, Harjosari II, Kec. Medan Amplas, Kota Medan, Sumatera Utara.
                      </p>
                   </button>
