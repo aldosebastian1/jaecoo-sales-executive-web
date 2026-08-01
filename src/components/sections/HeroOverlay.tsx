@@ -22,7 +22,7 @@ export default function HeroOverlay() {
             </p>
           </div>
           <div className="flex flex-row gap-2 sm:gap-4 md:gap-5 w-full sm:w-auto justify-start mb-[25px] md:mb-0">
-            <Link href="#katalog" className="font-geist flex-1 sm:flex-none bg-primary text-white px-2 py-3 md:px-7 md:py-3.5 text-[11px] md:text-[16px] font-semibold tracking-[0.02em] rounded-full text-center hover:bg-[#0c626a] transition-all duration-300 flex items-center justify-center">
+            <Link href="#katalog" className="font-geist flex-1 sm:flex-none bg-primary text-white px-2 py-3 md:px-7 md:py-3.5 text-[11px] md:text-[16px] font-semibold tracking-[0.02em] rounded-full text-center hover:bg-primary-800 transition-all duration-300 flex items-center justify-center">
               JELAJAHI MODEL
             </Link>
             <HeroLeadCTA />
