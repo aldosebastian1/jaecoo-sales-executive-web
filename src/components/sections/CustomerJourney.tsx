@@ -71,16 +71,19 @@ export default function CustomerJourney() {
       </div>
 
       {/* Steps Grid - Wider Container to give cards more space */}
-      <div className="max-w-[1640px] mx-auto px-4 xl:px-12 relative z-10 mt-12 mb-16">
-        <div className="flex flex-col xl:flex-row items-center xl:items-stretch justify-center gap-6 xl:gap-2">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-[60px] relative z-10 mt-12 mb-16">
+        <div 
+          className="flex lg:grid lg:grid-cols-5 gap-4 sm:gap-5 overflow-x-auto lg:overflow-visible snap-x snap-mandatory pb-8 lg:pb-0 pl-4 lg:pl-0 -mr-4 pr-4 lg:mr-0 lg:pr-0 hide-scrollbar"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           {steps.map((step, index) => (
             <React.Fragment key={step.id}>
-              <ScrollReveal variant="fade-in" delay={index * 0.1} className="w-full flex-1 relative z-10">
-                <div className="relative bg-[#FAFAFA] border border-gray-100 rounded-3xl overflow-hidden h-full flex flex-col items-start text-left shadow-sm hover:shadow-md transition-shadow duration-300">
+              <ScrollReveal variant="fade-in" delay={index * 0.1} className="w-[180px] sm:w-[200px] lg:w-auto shrink-0 lg:shrink snap-start relative z-10 h-full">
+                <div className="relative bg-[#FAFAFA] border border-gray-100 rounded-3xl overflow-hidden h-full flex flex-col items-start text-left shadow-sm">
                   {/* Image Container with Badge */}
-                  <div className="relative w-full h-[180px] md:h-[160px] xl:h-[130px] overflow-hidden shrink-0">
+                  <div className="relative w-full h-[100px] sm:h-[110px] lg:h-[120px] xl:h-[130px] overflow-hidden shrink-0">
                     {/* Badge */}
-                    <div className="absolute top-0 left-0 w-8 h-8 bg-primary text-white flex items-center justify-center font-geist font-medium text-sm rounded-br-2xl shadow-sm z-10">
+                    <div className="absolute top-0 left-0 w-7 h-7 bg-primary text-white flex items-center justify-center font-geist font-medium text-[11px] sm:text-xs rounded-br-xl shadow-sm z-10">
                       {step.id}
                     </div>
                     
@@ -98,25 +101,22 @@ export default function CustomerJourney() {
                 </div>
                 
                 {/* Content Container */}
-                <div className="p-3 xl:px-4 xl:py-4 flex flex-col flex-grow justify-start">
-                  <h3 className="font-geist font-medium text-[17px] xl:text-lg text-gray-900 mb-1">{step.title}</h3>
-                  <p className="font-geist font-normal text-gray-700 text-[13px] xl:text-sm leading-relaxed">
+                <div className="p-3 sm:p-4 flex flex-col flex-grow justify-start">
+                  <h3 className="font-geist font-medium text-[13px] sm:text-[14px] lg:text-[15px] text-gray-900 mb-1 leading-tight">{step.title}</h3>
+                  <p className="font-geist font-normal text-gray-600 text-[10px] sm:text-[11px] lg:text-[12px] leading-relaxed">
                     {step.description}
                   </p>
                 </div>
                 </div>
-              </ScrollReveal>
-
-              {/* Arrow */}
+              {/* Arrow (Absolutely positioned so it doesn't break flex spacing) */}
               {index < steps.length - 1 && (
-                <div className="hidden xl:flex items-center justify-center flex-shrink-0 z-20 -mx-3">
-                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white shadow-sm border border-[#FAFAFA]">
-                    <svg className="w-3 h-3 ml-px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
+                <div className="absolute top-[45%] -right-3 sm:-right-4 lg:-right-5 -translate-y-1/2 z-20 flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-primary text-white shadow-sm border border-[#FAFAFA]">
+                  <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 ml-px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                  </svg>
                 </div>
               )}
+            </ScrollReveal>
             </React.Fragment>
           ))}
         </div>
@@ -141,35 +141,34 @@ export default function CustomerJourney() {
             
             
             {/* Content constrained to left area */}
-            <div className="relative z-10 p-6 lg:p-6 xl:p-7 w-full xl:w-[80%] 2xl:w-[75%] flex flex-col xl:flex-row items-center xl:items-start justify-start gap-5 xl:gap-6 text-center xl:text-left">
+            <div className="relative z-10 px-6 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-10 xl:px-12 xl:py-8 w-full xl:w-[85%] 2xl:w-[80%] flex flex-col xl:flex-row items-start xl:items-center justify-start gap-5 xl:gap-4 text-left">
               
               {/* Text on the left */}
-              <div className="shrink-0 w-full">
-                <h3 className="font-geist font-medium text-2xl md:text-[26px] xl:text-[28px] leading-tight mb-2 tracking-tight">
-                  <span className="text-[#5CE1E6]">Siap Memulai</span> <br className="hidden xl:block" /> <span className="text-white">Perjalanan Anda?</span>
+              <div className="w-full xl:w-auto">
+                <h3 className="font-geist font-medium text-[22px] sm:text-2xl md:text-[26px] xl:text-[28px] leading-[1.3] xl:leading-tight mb-3 xl:mb-2 tracking-tight">
+                  <span className="text-[#5CE1E6]">Siap Memulai</span> <br /> <span className="text-white">Perjalanan Anda?</span>
                 </h3>
-                <p className="font-geist font-normal text-gray-200 text-[13px] xl:text-[14px] leading-[1.6]">
-                  Dapatkan penawaran eksklusif dan kredit ringan. <br className="hidden xl:block" /> Jadwalkan sesi test drive Anda hari ini.
+                <p className="font-geist font-normal text-gray-300 xl:text-gray-200 text-[13px] sm:text-[14px] leading-[1.6] max-w-[340px] sm:max-w-md xl:max-w-[340px]">
+                  Dapatkan penawaran eksklusif dan kredit ringan. <br /> Jadwalkan sesi test drive Anda hari ini.
                 </p>
               </div>
               
-              {/* Buttons on the right, but still within the 60% block */}
-              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto shrink-0 justify-center xl:justify-start">
+              {/* Buttons on the left, next to text on desktop */}
+              <div className="flex flex-row gap-2 sm:gap-3 w-full sm:w-auto shrink-0 mt-2 xl:mt-0 justify-start">
                 <Link 
                   href="#test-drive"
-                  className="font-geist flex items-center justify-center bg-primary text-white px-[17px] py-3 xl:py-[9px] text-[13px] xl:text-[12px] font-semibold tracking-[0.02em] rounded-full text-center hover:bg-[#0c626a] transition-all duration-300 shadow-sm w-full sm:w-auto"
+                  className="font-geist flex-1 sm:flex-none flex items-center justify-center bg-primary text-white px-2 sm:px-[20px] xl:px-[17px] py-3 xl:py-[9px] text-[10px] sm:text-[13px] xl:text-[12px] font-semibold tracking-[0.02em] rounded-full text-center hover:bg-[#0c626a] transition-all duration-300 shadow-sm"
                 >
                   BOOKING TEST DRIVE
                 </Link>
                 <WhatsAppButton 
                   href={getSimpleWALink("Halo Bastian, saya tertarik untuk konsultasi dan booking test drive mobil Jaecoo.")}
                   contentName="Customer Journey WA Button"
-                  className="font-geist flex justify-center items-center gap-2 bg-white/10 backdrop-blur-md text-white px-[17px] py-3 xl:py-[9px] text-[13px] xl:text-[12px] font-semibold tracking-[0.02em] rounded-full text-center border-[1.5px] border-white/50 hover:bg-white hover:text-gray-900 transition-all duration-300 w-full sm:w-auto"
+                  className="font-geist flex-1 sm:flex-none flex justify-center items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-md text-white px-2 sm:px-[20px] xl:px-[17px] py-3 xl:py-[9px] text-[10px] sm:text-[13px] xl:text-[12px] font-semibold tracking-[0.02em] rounded-full text-center border-[1.5px] border-white/50 hover:bg-white hover:text-gray-900 transition-all duration-300"
                 >
                   HUBUNGI WHATSAPP
                 </WhatsAppButton>
               </div>
-
             </div>
           </div>
         </ScrollReveal>
