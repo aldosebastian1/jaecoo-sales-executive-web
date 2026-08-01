@@ -89,14 +89,14 @@ Dealer mobil membutuhkan kehadiran digital yang cepat, profesional, dan mudah di
 - Data terstruktur (JSON-LD) tervalidasi di Google Rich Results Test
 
 ### 4.3 Booking
-- Form: Nama, No. HP/WA, Email, Pilihan Model, Tipe Booking (Test Drive/Konsultasi/Trade-in), Jadwal preferensi, Catatan
-- Validasi input di sisi client
-- Submit via pihak ketiga (Formspree/Web3Forms/Getform) → notifikasi email ke tim sales
+- Form: Nama, No. HP/WA, Tanggal, Waktu, Lokasi, Catatan
+- Validasi input menggunakan Zod di sisi Client dan Server (Server Actions)
+- Submit via Next.js Server Actions dan pengiriman notifikasi email ke admin menggunakan Resend API
 - Alternatif: tombol "Lanjut via WhatsApp" yang auto-fill pesan dari form
 - Halaman sukses/terima kasih (thank you page) untuk tracking konversi di GA4
 
 **Kriteria Penerimaan:**
-- Form berhasil terkirim tanpa reload halaman (AJAX submit)
+- Form diproses aman secara server-side tanpa reload halaman
 - Tracking event `generate_lead` tercatat di Google Analytics 4
 
 ### 4.4 Artikel
@@ -129,15 +129,21 @@ Dealer mobil membutuhkan kehadiran digital yang cepat, profesional, dan mudah di
 
 | Layer | Pilihan |
 |---|---|
-| Framework | Astro (Islands Architecture, output static) |
-| Styling | Tailwind CSS |
-| Konten Artikel & Katalog | Astro Content Collections (Markdown/MDX/JSON) |
-| Form Booking | Formspree / Web3Forms + fallback WhatsApp link |
-| Hosting | Cloudflare Pages atau Netlify (CDN global, auto SSL) |
-| Analytics | Google Analytics 4 + Google Search Console |
-| SEO Tools | astro-seo / astro-sitemap, JSON-LD manual per halaman |
-| Image Optimization | Astro Image (`astro:assets`) — WebP/AVIF otomatis |
-| Version Control | Git + GitHub (deploy otomatis ke hosting) |
+| Framework | Next.js 15 (App Router, React Server Components) |
+| Styling | Tailwind CSS v4 |
+| Konten Artikel & Katalog | Data lokal (TypeScript/JSON array) |
+| Form Booking | Next.js Server Actions + Resend API |
+| Hosting | Vercel (mendukung penuh fitur edge & server Next.js) |
+| Analytics | Vercel Analytics, Vercel Speed Insights, Google Analytics 4 |
+| SEO Tools | Metadata API Next.js, JSON-LD manual per halaman |
+| Image Optimization | `next/image` otomatis dengan format WebP/AVIF |
+| Version Control | Git + GitHub (deploy otomatis ke Vercel) |
+
+### 6.1 Design System & Colors
+- **Primary Brand Teal:** `#0F7A83` (hover: `#155464`, active: `#114654`, light-bg: `#edf5f7`)
+- **Secondary Brand Gold:** `#9A7222` (hover: `#7C5C1A`, active: `#614713`, light-bg: `#FDF7EB`)
+- **Success States:** Green `#16A34A` / Light green `#F0FDF4`
+- **Error States:** Red `#DC2626` / Light red `#FEF2F2`
 
 ---
 
