@@ -5,6 +5,11 @@ import React, { useEffect, useRef } from 'react';
 interface ArticleBodyProps {
   content: string;
 }
+declare global {
+  interface Window {
+    gtag?: (command: string, targetId: string, config?: object) => void;
+  }
+}
 
 export default function ArticleBody({ content }: ArticleBodyProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -23,14 +28,12 @@ export default function ArticleBody({ content }: ArticleBodyProps) {
         const textContent = anchor.textContent || 'WhatsApp Link';
         
         // GA4 Tracking
-        if (typeof window !== 'undefined' && (window as any).gtag) {
-          (window as any).gtag('event', 'contact_us', {
+        if (typeof window !== 'undefined' && window.gtag) {
+          window.gtag('event', 'contact_us', {
             contact_type: 'whatsapp',
             source: `Article Body - ${textContent.trim()}`,
           });
         }
-
-
       }
     };
 
