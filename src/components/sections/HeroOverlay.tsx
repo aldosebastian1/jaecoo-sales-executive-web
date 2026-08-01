@@ -21,7 +21,7 @@ export default function HeroOverlay() {
               Teknologi cerdas. Performa buas. Dibuat untuk mereka yang tidak pernah puas dengan standar biasa.
             </p>
           </div>
-          <div className="flex flex-row gap-2 sm:gap-4 md:gap-5 w-full sm:w-auto justify-start mb-[5px] md:mb-0">
+          <div className="flex flex-row gap-2 sm:gap-4 md:gap-5 w-full sm:w-auto justify-start mb-[25px] md:mb-0">
             <Link href="#katalog" className="font-geist flex-1 sm:flex-none bg-primary text-white px-2 py-3 md:px-7 md:py-3.5 text-[11px] md:text-[16px] font-semibold tracking-[0.02em] rounded-full text-center hover:bg-[#0c626a] transition-all duration-300 flex items-center justify-center">
               JELAJAHI MODEL
             </Link>
