@@ -1,9 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-import ArticleCard from '@/components/articles/ArticleCard';
 import ArticlesGrid from '@/components/articles/ArticlesGrid';
 import { articlesData } from '@/data/artikel';
 
@@ -57,7 +55,7 @@ export default async function Artikel(props: { searchParams: Promise<{ kategori?
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-gray-200 pb-4 mb-10 gap-4">
                 <ScrollReveal delay={0.1} variant="slide-right-short" duration={0.8}>
                     <h2 className="font-montserrat font-bold text-lg md:text-xl text-gray-900 uppercase tracking-widest">
-                        DAFTAR ARTICLES
+                        DAFTAR ARTIKEL
                     </h2>
                 </ScrollReveal>
                 <ScrollReveal delay={0.25} variant="slide-right-short" duration={0.8}>
@@ -103,4 +101,3 @@ export default async function Artikel(props: { searchParams: Promise<{ kategori?
     </main>
   );
 }
-
