@@ -146,7 +146,7 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning className={`min-h-screen flex flex-col bg-white text-gray-800 antialiased selection:bg-primary selection:text-white overflow-x-hidden ${inter.variable} ${montserrat.variable} ${poppins.variable} ${geist.variable} font-inter`}>
-        {config.analytics.enabled && (config.analytics.gaId || config.analytics.measurementId) && (
+        {(config.analytics.enabled && (config.analytics.gaId || config.analytics.measurementId)) ? (
           <React.Fragment key="analytics-scripts">
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${config.analytics.gaId || config.analytics.measurementId}`}
@@ -161,19 +161,19 @@ export default function RootLayout({
               `}
             </Script>
           </React.Fragment>
-        )}
+        ) : null}
         {/* Wrapper UI untuk menghindari bug 'missing key' dari OuterLayoutRouter di Next.js */}
-        <div id="app-layout" className="flex flex-col min-h-screen w-full">
+        <div key="app-layout" id="app-layout" className="flex flex-col min-h-screen w-full">
           <NextTopLoader color="#0F7A83" showSpinner={false} />
           <Navbar />
           <main className="flex-1 w-full">{children}</main>
           <Footer />
         </div>
 
-        <FloatingWhatsAppToggle />
+        <FloatingWhatsAppToggle key="whatsapp-toggle" />
 
         {/* Wrapper untuk Analytics agar tidak tercampur dalam reconciliation Next.js */}
-        <div id="vercel-metrics" style={{ display: 'none' }} key="vercel-metrics">
+        <div key="vercel-metrics" id="vercel-metrics" style={{ display: 'none' }}>
           <SpeedInsights />
           <Analytics />
         </div>
