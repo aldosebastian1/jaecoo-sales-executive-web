@@ -27,7 +27,6 @@ export default function ArticlesGrid({ articles }: ArticlesGridProps) {
             key={article.id} 
             article={article} 
             index={index} 
-            totalArticles={visibleArticles.length} 
           />
         ))}
       </div>
