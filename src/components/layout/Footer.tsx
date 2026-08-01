@@ -92,17 +92,17 @@ const Footer: React.FC = () => {
             </h3>
             <ul className="flex flex-col space-y-3">
               <li>
-                <Link href="#katalog" onClick={(e) => handleHashClick(e, '#katalog')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300">
+                <Link href="#katalog" onClick={(e) => handleHashClick(e, '#katalog')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
                   Jaecoo J5
                 </Link>
               </li>
               <li>
-                <Link href="#katalog" onClick={(e) => handleHashClick(e, '#katalog')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300">
+                <Link href="#katalog" onClick={(e) => handleHashClick(e, '#katalog')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
                   Jaecoo J7
                 </Link>
               </li>
               <li>
-                <Link href="#katalog" onClick={(e) => handleHashClick(e, '#katalog')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300">
+                <Link href="#katalog" onClick={(e) => handleHashClick(e, '#katalog')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
                   Jaecoo J8
                 </Link>
               </li>
@@ -116,17 +116,17 @@ const Footer: React.FC = () => {
             </h3>
             <ul className="flex flex-col space-y-3">
               <li>
-                <Link href="#booking" onClick={(e) => handleHashClick(e, '#test-drive')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300">
+                <Link href="#booking" onClick={(e) => handleHashClick(e, '#test-drive')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
                   Test Drive
                 </Link>
               </li>
               <li>
-                <Link href="#service" onClick={(e) => handleHashClick(e, '#service')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300">
+                <Link href="#service" onClick={(e) => handleHashClick(e, '#service')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
                   Service
                 </Link>
               </li>
               <li>
-                <Link href="#garansi" onClick={(e) => handleHashClick(e, '#garansi')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300">
+                <Link href="#garansi" onClick={(e) => handleHashClick(e, '#garansi')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
                   Garansi
                 </Link>
               </li>
@@ -140,17 +140,17 @@ const Footer: React.FC = () => {
             </h3>
             <ul className="flex flex-col space-y-3">
               <li>
-                <Link href="#tentang-kami" onClick={(e) => handleHashClick(e, '#tentang-kami')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300">
+                <Link href="#tentang-kami" onClick={(e) => handleHashClick(e, '#tentang-kami')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
                   Tentang Kami
                 </Link>
               </li>
               <li>
-                <Link href="/artikel" className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300">
+                <Link href="/artikel" className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
                   Berita
                 </Link>
               </li>
               <li>
-                <Link href="#faq" onClick={(e) => handleHashClick(e, '#faq')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300">
+                <Link href="#faq" onClick={(e) => handleHashClick(e, '#faq')} className="font-inter text-sm font-medium text-gray-800 hover:text-black transition-colors duration-300 whitespace-nowrap">
                   FAQ
                 </Link>
               </li>
@@ -158,7 +158,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Column 5: Hubungi Kami */}
-          <div className="w-[100%] sm:w-[45%] lg:w-auto flex flex-col">
+          <div className="w-[45%] lg:w-auto flex flex-col">
             <h3 className="font-inter text-xs font-bold text-black uppercase tracking-widest mb-3">
               Hubungi Kami
             </h3>
@@ -208,7 +208,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Copyright Bar */}
-        <div className="border-t border-gray-200 pt-4 mt-4 flex flex-col md:flex-row items-center md:items-start justify-between gap-3">
+        <div className="border-t border-gray-200 pt-5 mt-4 flex flex-col md:flex-row items-center md:items-start justify-between gap-3">
           <div className="font-inter text-xs text-gray-700 text-center md:text-left font-medium tracking-wide">
             Hak Cipta © {new Date().getFullYear()} Jaecoo Medan. Seluruh Hak Dilindungi.
           </div>
@@ -218,7 +218,7 @@ const Footer: React.FC = () => {
             rel="noopener noreferrer" 
             className="font-inter text-xs text-gray-700 text-center md:text-right font-medium tracking-wide group block cursor-pointer"
           >
-            Designed & Developed by <span className="text-primary group-hover:text-[#0c626a] transition-colors">Aldodev</span>
+            Designed & Developed by <span className="text-white font-bold group-hover:text-primary transition-colors">Aldodev</span>
           </a>
         </div>
       </div>
