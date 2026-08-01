@@ -46,7 +46,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variants = {
       primary:
-        'bg-primary text-white hover:bg-primary-hover active:bg-primary-800 disabled:bg-gray-300 focus:ring-primary',
+        'bg-primary text-white hover:bg-primary-800 active:bg-primary-800 disabled:bg-gray-300 focus:ring-primary',
       outline:
         'border-2 border-primary text-primary hover:bg-primary-50 active:bg-primary-100 disabled:border-gray-300 disabled:text-gray-400 focus:ring-primary',
       ghost:
@@ -68,7 +68,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       className
     );
 
-    const Component = (as || (href ? 'a' : 'button')) as any;
+    const Component = (as || (href ? 'a' : 'button')) as React.ElementType;
+    // @ts-expect-error - Framer motion dynamic component typing limitation
     const MotionComponent = motion(Component);
 
     return (
