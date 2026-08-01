@@ -3,7 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Article } from '@/types';
+
+import config from '@/config';
 import Button from '@/components/ui/Button';
 import ArticleCard from '@/components/articles/ArticleCard';
 import ArticleBody from '@/components/articles/ArticleBody';
@@ -18,8 +19,6 @@ export async function generateStaticParams() {
     slug: article.slug,
   }));
 }
-
-import config from '@/config';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
