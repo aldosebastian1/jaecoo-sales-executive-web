@@ -46,19 +46,17 @@ export type TestDriveFormData = z.infer<typeof TestDriveSchema>;
 export type LeadCTAFormData = z.infer<typeof LeadCTASchema>;
 export type SendEmailFormData = z.infer<typeof SendEmailSchema>;
 
-export const validateForm = async (schema: z.ZodSchema, data: unknown) => {
-  try {
-    const result = await schema.parseAsync(data);
-    return { success: true, data: result, errors: null };
-  } catch (error) {
-    if (error instanceof z.ZodError) {
-      const fieldErrors: Record<string, string> = {};
-      error.errors.forEach((err) => {
-        const field = err.path.join('.');
-        fieldErrors[field] = err.message;
-      });
-      return { success: false, data: null, errors: fieldErrors };
-    }
-    return { success: false, data: null, errors: { form: 'Validation error' } };
+export const validateForm = <T>(schema: z.ZodSchema<T>, data: unknown) => {
+  const result = schema.safeParse(data);
+  
+  if (result.success) {
+    return { success: true, data: result.data, errors: null };
+  } else {
+    const fieldErrors: Record<string, string> = {};
+    result.error.errors.forEach((err) => {
+      const field = err.path.join('.');
+      fieldErrors[field] = err.message;
+    });
+    return { success: false, data: null, errors: fieldErrors };
   }
 };
