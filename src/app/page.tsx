@@ -21,13 +21,8 @@ export default function Home() {
   return (
     <div className="w-full">
       <HeroSection />
-
-
-
       <WhyJaecoo />
-
       <VehicleCatalog />
-
       <CustomerJourney />
 
       <FAQ />
