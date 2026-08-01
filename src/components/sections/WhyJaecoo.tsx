@@ -60,9 +60,9 @@ export default function WhyJaecoo() {
         <div className="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
           {cards.map((card, index) => (
             <ScrollReveal key={card.id} delay={0.1 * index} variant="slide-up">
-              <div className="group flex flex-row sm:flex-col bg-[#FAFAFA] rounded-2xl sm:rounded-3xl overflow-hidden hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 border border-gray-100/50 h-full items-center sm:items-stretch shadow-sm sm:shadow-none">
+              <div className="group flex flex-row sm:flex-col bg-[#FAFAFA] rounded-2xl sm:rounded-3xl overflow-hidden hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 border border-gray-100/50 h-full items-stretch shadow-sm sm:shadow-none">
                 {/* Image Container with Badge */}
-                <div className="relative w-[130px] shrink-0 sm:w-full h-[120px] sm:h-[150px] lg:h-[120px] xl:h-[130px] overflow-hidden">
+                <div className="relative w-[130px] shrink-0 sm:w-full sm:h-[150px] lg:h-[120px] xl:h-[130px] overflow-hidden">
                   {/* Badge */}
                   <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-10 w-6 h-6 sm:w-7 sm:h-7 bg-primary rounded-full flex items-center justify-center shadow-[0_4px_12px_-4px_rgba(15,122,131,0.5)]">
                     <span className="font-geist font-medium text-white text-[10px] sm:text-[12px]">0{card.id}</span>
@@ -75,7 +75,7 @@ export default function WhyJaecoo() {
                       alt={card.title}
                       fill
                       sizes="(max-width: 640px) 130px, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover object-center"
+                      className="object-cover object-[40%_center]"
                     />
                   </div>
                 </div>
