@@ -44,13 +44,13 @@ export default function VehicleCatalog() {
 
         <div 
           ref={scrollRef}
-          className="flex gap-8 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-2 -mx-4 px-4 sm:mx-0 sm:px-0"
+          className="flex gap-8 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-2 -mx-4 px-[7.5vw] sm:mx-0 sm:px-0"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {vehicles.map((vehicle) => (
             <div 
               key={vehicle.id} 
-              className="snap-start shrink-0 w-[85vw] sm:w-[calc(50%-1rem)] md:w-[calc(33.333333%-1.33rem)] flex flex-col border border-black/20 bg-white overflow-hidden group hover:border-black/40 transition-colors duration-300"
+              className="snap-center sm:snap-start shrink-0 w-[85vw] sm:w-[calc(50%-1rem)] md:w-[calc(33.333333%-1.33rem)] flex flex-col border border-black/20 bg-white overflow-hidden group hover:border-black/40 transition-colors duration-300"
             >
               <div className="relative w-full aspect-video overflow-hidden">
                 <Image 
@@ -61,12 +61,12 @@ export default function VehicleCatalog() {
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
-              <div className="pt-4 pb-5 px-4 md:px-5 relative z-10 flex flex-col xs:flex-row justify-between items-start gap-2 md:gap-3 bg-white">
+              <div className="pt-4 pb-5 px-4 md:px-5 relative z-10 flex flex-row justify-between items-start gap-2 md:gap-3 bg-white">
                 <div className="flex flex-col gap-1 text-left w-full">
                   <h3 className="font-geist font-semibold text-xl md:text-2xl text-gray-900 leading-none tracking-tight">{vehicle.name}</h3>
                   <p className="font-geist font-medium text-primary/80 text-[11px] md:text-sm uppercase tracking-wider mt-1">{vehicle.slogan}</p>
                 </div>
-                <div className="flex flex-col gap-1 text-left xs:text-right w-full">
+                <div className="flex flex-col gap-1 text-right w-full">
                   <span className="font-geist font-medium text-[12px] md:text-base text-gray-500 leading-none">{vehicle.priceLabel}</span>
                   <span className="font-geist font-bold text-primary text-[15px] md:text-lg uppercase tracking-wider mt-0.5">{vehicle.priceValue}</span>
                 </div>
@@ -76,7 +76,7 @@ export default function VehicleCatalog() {
         </div>
 
         {/* Slider Controls Below */}
-        <div className="hidden md:flex justify-center gap-4 mt-2">
+        <div className="flex justify-center gap-4 mt-6 md:mt-2">
           <button 
             onClick={() => scroll('left')}
             className="w-10 h-10 rounded-full bg-primary border border-primary flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all duration-300 shadow-sm"
