@@ -38,6 +38,7 @@ const Footer: React.FC = () => {
           src="/images/footer-bg.png"
           alt="Footer Background"
           fill
+          priority={true}
           className="object-cover object-center"
           quality={100}
         />
@@ -53,9 +54,10 @@ const Footer: React.FC = () => {
             <div className="relative w-[130px] h-9 mb-3">
               <Image 
                 alt="Jaecoo Logo" 
-                fill 
-                sizes="130px"
-                className="object-contain object-left brightness-0  " 
+                width={130}
+                height={36}
+                style={{ width: "auto", height: "100%" }}
+                className="object-contain object-left brightness-0" 
                 src="/icons/jaecoo-logo-black.avif" 
               />
             </div>
