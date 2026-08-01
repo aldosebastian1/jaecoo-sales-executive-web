@@ -19,8 +19,8 @@ export default function WhatsAppButton({
     e.preventDefault();
 
     // GA4 Tracking
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'contact_us', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'contact_us', {
         contact_type: 'whatsapp',
         source: contentName,
       });
