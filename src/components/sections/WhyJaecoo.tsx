@@ -43,7 +43,7 @@ export default function WhyJaecoo() {
         <div className="flex flex-col items-start mb-10 md:mb-12">
           <ScrollReveal variant="slide-up">
             <div className="inline-flex mb-4">
-              <span className="font-geist text-[#1F2937] text-[12px] md:text-[14px] font-semibold uppercase tracking-[0.2em]">
+              <span className="font-geist text-gray-800 text-[12px] md:text-[14px] font-semibold uppercase tracking-[0.2em]">
                 MENGAPA MEMILIH KAMI
               </span>
             </div>
@@ -60,7 +60,7 @@ export default function WhyJaecoo() {
         <div className="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
           {cards.map((card, index) => (
             <ScrollReveal key={card.id} delay={0.1 * index} variant="slide-up">
-              <div className="group flex flex-row sm:flex-col bg-[#FAFAFA] rounded-2xl sm:rounded-3xl overflow-hidden hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 border border-gray-100/50 h-full items-stretch shadow-sm sm:shadow-none">
+              <div className="group flex flex-row sm:flex-col bg-gray-50 rounded-2xl sm:rounded-3xl overflow-hidden hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 border border-gray-100/50 h-full items-stretch shadow-sm sm:shadow-none">
                 {/* Image Container with Badge */}
                 <div className="relative w-[130px] shrink-0 sm:w-full sm:h-[150px] lg:h-[120px] xl:h-[130px] overflow-hidden">
                   {/* Badge */}
