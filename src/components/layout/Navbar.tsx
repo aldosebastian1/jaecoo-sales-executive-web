@@ -8,6 +8,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { getSimpleWALink } from '@/lib/whatsapp';
 
+declare global {
+  interface Window {
+    gtag?: (command: string, targetId: string, config?: object) => void;
+  }
+}
+
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('/');
@@ -53,8 +59,8 @@ const Navbar: React.FC = () => {
     e.preventDefault();
 
     // GA4 Tracking
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'contact_us', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'contact_us', {
         contact_type: 'whatsapp',
         source: 'Navbar WA Button'
       });
@@ -177,8 +183,7 @@ const Navbar: React.FC = () => {
             <a
               href={getSimpleWALink("Halo Bastian, saya tertarik dengan mobil Jaecoo dan ingin info lebih lanjut.")}
               onClick={(e) => handleWAClick(e, getSimpleWALink("Halo Bastian, saya tertarik dengan mobil Jaecoo dan ingin info lebih lanjut."))}
-              target="_blank" rel="noopener noreferrer"
-              className="font-inter bg-primary text-white px-6 py-2.5 text-[13px] font-semibold uppercase tracking-wider hover:bg-primary-hover transition-colors duration-300 rounded-full"
+              className="font-inter bg-primary text-white px-6 py-2.5 text-[13px] font-semibold uppercase tracking-wider hover:bg-primary-800 transition-colors duration-300 rounded-full"
             >
               Hubungi WA
             </a>
@@ -228,7 +233,7 @@ const Navbar: React.FC = () => {
                 }}
                 className={clsx(
                   'block px-4 py-3.5 rounded-lg text-center font-inter text-sm font-semibold uppercase tracking-wider transition-all duration-200',
-                  isActive('/') ? 'bg-primary-light text-primary' : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
+                  isActive('/') ? 'bg-primary-50 text-primary' : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
                 )}
               >
                 Beranda
@@ -238,7 +243,7 @@ const Navbar: React.FC = () => {
                 onClick={(e) => handleHashClick(e, '#why-jaecoo')}
                 className={clsx(
                   'block px-4 py-3.5 rounded-lg text-center font-inter text-sm font-semibold uppercase tracking-wider transition-all duration-200',
-                  isActive('#why-jaecoo') ? 'bg-primary-light text-primary' : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
+                  isActive('#why-jaecoo') ? 'bg-primary-50 text-primary' : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
                 )}
               >
                 Keunggulan
@@ -248,7 +253,7 @@ const Navbar: React.FC = () => {
                 onClick={(e) => handleHashClick(e, '#katalog')}
                 className={clsx(
                   'block px-4 py-3.5 rounded-lg text-center font-inter text-sm font-semibold uppercase tracking-wider transition-all duration-200',
-                  isActive('#katalog') ? 'bg-primary-light text-primary' : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
+                  isActive('#katalog') ? 'bg-primary-50 text-primary' : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
                 )}
               >
                 Katalog
@@ -258,7 +263,7 @@ const Navbar: React.FC = () => {
                 onClick={(e) => handleHashClick(e, '#faq')}
                 className={clsx(
                   'block px-4 py-3.5 rounded-lg text-center font-inter text-sm font-semibold uppercase tracking-wider transition-all duration-200',
-                  isActive('#faq') ? 'bg-primary-light text-primary' : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
+                  isActive('#faq') ? 'bg-primary-50 text-primary' : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
                 )}
               >
                 FAQ
@@ -268,7 +273,7 @@ const Navbar: React.FC = () => {
                 onClick={(e) => handleHashClick(e, '#test-drive')}
                 className={clsx(
                   'block px-4 py-3.5 rounded-lg text-center font-inter text-sm font-semibold uppercase tracking-wider transition-all duration-200',
-                  isActive('#test-drive') ? 'bg-primary-light text-primary' : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
+                  isActive('#test-drive') ? 'bg-primary-50 text-primary' : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
                 )}
               >
                 Test Drive
