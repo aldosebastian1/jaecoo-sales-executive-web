@@ -7,10 +7,9 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 interface ArticleCardProps {
   article: Article;
   index?: number;
-  totalArticles?: number;
 }
 
-const ArticleCard: React.FC<ArticleCardProps> = ({ article, index = 0, totalArticles = 0 }) => {
+const ArticleCard: React.FC<ArticleCardProps> = ({ article, index = 0 }) => {
   const baseDelay = 0.1 + (index % 3) * 0.1;
   const categoryLabel = article.category === 'PROMO' ? 'Promo' : article.category === 'REVIEW' ? 'Review' : 'EV Tech';
 
