@@ -4,12 +4,12 @@ export const LeadCTASchema = z
   .object({
     name: z
       .string()
-      .min(3, 'Nama minimal 3 karakter')
-      .max(50, 'Nama maksimal 50 karakter')
-      .regex(/^[a-zA-Z\s'-]+$/, 'Nama hanya boleh mengandung huruf, spasi, dan tanda petik'),
+      .min(3, 'Minimal 3 karakter')
+      .max(50, 'Maksimal 50 karakter')
+      .regex(/^[a-zA-Z\s'-]+$/, 'Hanya huruf, spasi & petik'),
     phone: z
       .string()
-      .regex(/^(\+62|0)[0-9]{9,12}$/, 'Format nomor tidak valid. Contoh: 08123456789'),
+      .regex(/^(\+62|0)[0-9]{9,12}$/, 'Nomor tidak valid (Cth: 0812...)'),
   })
   .strict();
 
@@ -17,16 +17,16 @@ export const TestDriveSchema = z
   .object({
     name: z
       .string()
-      .min(3, 'Nama minimal 3 karakter')
-      .max(50, 'Nama maksimal 50 karakter')
-      .regex(/^[a-zA-Z\s'-]+$/, 'Nama hanya boleh mengandung huruf, spasi, dan tanda petik'),
+      .min(3, 'Minimal 3 karakter')
+      .max(50, 'Maksimal 50 karakter')
+      .regex(/^[a-zA-Z\s'-]+$/, 'Hanya huruf, spasi & petik'),
     phone: z
       .string()
-      .regex(/^(\+62|0)[0-9]{9,12}$/, 'Format nomor tidak valid. Contoh: 08123456789'),
-    date: z.string().min(1, 'Pilih tanggal test drive'),
-    time: z.string().min(1, 'Pilih perkiraan waktu'),
-    location: z.string().min(1, 'Pilih lokasi showroom'),
-    notes: z.string().max(500, 'Catatan maksimal 500 karakter').optional().or(z.literal('')),
+      .regex(/^(\+62|0)[0-9]{9,12}$/, 'Nomor tidak valid (Cth: 0812...)'),
+    date: z.string().min(1, 'Pilih tanggal'),
+    time: z.string().min(1, 'Pilih waktu'),
+    location: z.string().min(1, 'Pilih dealer'),
+    notes: z.string().max(500, 'Maksimal 500 karakter').optional().or(z.literal('')),
     honeypot: z.string().max(0, 'Spam terdeteksi').optional().or(z.literal('')),
   })
   .strict();
