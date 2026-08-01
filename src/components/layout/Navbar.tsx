@@ -99,7 +99,7 @@ const Navbar: React.FC = () => {
               className="block w-full h-full relative" 
               aria-label="Beranda Jaecoo Medan"
             >
-              <Image alt="Jaecoo Logo" fill sizes="140px" className="object-contain object-left" src="/icons/jaecoo-logo-black.avif" />
+              <Image alt="Jaecoo Logo" width={140} height={42} style={{ width: "auto", height: "100%" }} className="object-contain object-left" src="/icons/jaecoo-logo-black.avif" />
             </Link>
           </div>
 
