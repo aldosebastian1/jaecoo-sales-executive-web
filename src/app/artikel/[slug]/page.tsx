@@ -211,7 +211,7 @@ const ArtikelDetail: React.FC<ArtikelDetailProps> = async ({ params }) => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {relatedArticles.map((article) => (
-                <ArticleCard key={article.id} article={article} totalArticles={articlesData.length} />
+                <ArticleCard key={article.id} article={article} />
               ))}
             </div>
           </section>
