@@ -76,7 +76,7 @@ export default function LocationPopup({ children }: { children?: React.ReactNode
                              <span className="bg-white text-primary text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-bold shrink-0 mt-0.5 shadow-sm">Aktif</span>
                          )}
                      </div>
-                     <p className={`font-geist text-[12px] sm:text-[13px] leading-relaxed transition-colors ${activeLocation === 'centerpoint' ? 'text-white/90' : 'text-gray-500 group-hover:text-white/90'}`}>
+                     <p className={`font-geist text-[12px] sm:text-[13px] leading-relaxed transition-colors ${activeLocation === 'centerpoint' ? 'text-white' : 'text-gray-500 group-hover:text-white'}`}>
                        Mall Centre Point Medan, Jl. Jawa No.8, Buntu, Kec. Medan Tim., Kota Medan, Sumatera Utara.
                      </p>
                   </button>
@@ -91,7 +91,7 @@ export default function LocationPopup({ children }: { children?: React.ReactNode
                              <span className="bg-white text-primary text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-bold shrink-0 mt-0.5 shadow-sm">Aktif</span>
                          )}
                      </div>
-                     <p className={`font-geist text-[12px] sm:text-[13px] leading-relaxed transition-colors ${activeLocation === 'amplas' ? 'text-white/90' : 'text-gray-500 group-hover:text-white/90'}`}>
+                     <p className={`font-geist text-[12px] sm:text-[13px] leading-relaxed transition-colors ${activeLocation === 'amplas' ? 'text-white' : 'text-gray-500 group-hover:text-white'}`}>
                        Jl. Sisingamangaraja No. KM 6, Harjosari II, Kec. Medan Amplas, Kota Medan, Sumatera Utara.
                      </p>
                   </button>
