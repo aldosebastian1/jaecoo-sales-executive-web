@@ -102,7 +102,6 @@ export default function FAQ() {
           alt="FAQ Background" 
           fill 
           className="object-cover object-center" 
-          priority
         />
         {/* Gradient Overlay to blend into #FAFAFA background smoothly */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent from-60% to-[#FAFAFA]" />
@@ -155,7 +154,7 @@ export default function FAQ() {
               </div>
               <Link 
                 href="#test-drive"
-                className="font-geist flex items-center justify-start gap-2 text-white text-[14px] font-semibold tracking-wide hover:text-[#14a9b7] transition-all mt-2.5 group"
+                className="font-geist flex items-center justify-start gap-2 text-white text-[14px] font-semibold tracking-wide hover:opacity-80 transition-all mt-2.5 group"
               >
                 HUBUNGI KAMI
                 <svg className="w-4 h-4 transform transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
