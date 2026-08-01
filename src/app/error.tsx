@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { getSimpleWALink } from '@/lib/whatsapp';
 import WhatsAppButton from '@/components/widgets/WhatsAppButton';
@@ -12,6 +13,12 @@ export default function Error({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  
+  // Mencatat error ke console client agar tetap bisa terlacak di Production
+  useEffect(() => {
+    console.error('Application Error Boundary Caught:', error);
+  }, [error]);
+
   return (
     <div className="min-h-[80vh] flex flex-col items-center justify-center px-4 sm:px-[60px] py-20 bg-[#FAFAFA] overflow-hidden">
       <div className="w-full max-w-2xl mx-auto text-center">
@@ -39,7 +46,7 @@ export default function Error({
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center items-center mt-4">
             <button 
               onClick={() => reset()}
-              className="font-geist bg-primary text-white px-7 py-3 text-[16px] font-semibold tracking-[0.02em] rounded-full w-full sm:w-auto text-center hover:bg-[#0c626a] transition-all duration-300"
+              className="font-geist bg-primary text-white px-7 py-3 text-[16px] font-semibold tracking-[0.02em] rounded-full w-full sm:w-auto text-center hover:bg-[#003399] transition-all duration-300"
             >
               MUAT ULANG
             </button>
@@ -68,4 +75,3 @@ export default function Error({
     </div>
   );
 }
-
