@@ -5,27 +5,27 @@ import ScrollReveal from '../ui/ScrollReveal';
 const cards = [
   {
     id: 1,
-    title: "Desain Premium",
-    description: "Estetika modern yang memadukan garis tegas dan proporsi elegan, menciptakan kehadiran yang tak terlupakan di jalan.",
-    image: "/images/why-jaecoo/card-feature.jpeg"
+    title: "SUV PREMIUM",
+    description: "Desain modern dan elegan yang memadukan gaya, kenyamanan, dan fungsionalitas.",
+    image: "/images/why-jaecoo/card-feature1.jpg"
   },
   {
     id: 2,
-    title: "Teknologi Cerdas",
-    description: "Dilengkapi dengan sistem AR-HUD, layar sentuh interaktif, dan fitur keselamatan ADAS mutakhir.",
-    image: "/images/why-jaecoo/card-feature.jpeg"
+    title: "INTELLIGENT TECHNOLOGY",
+    description: "Dilengkapi teknologi cerdas untuk membantu Anda tetap terhubung dan aman di setiap perjalanan.",
+    image: "/images/why-jaecoo/card-feature2.jpg"
   },
   {
     id: 3,
-    title: "Performa Tangguh",
-    description: "Sistem penggerak AWD cerdas (ARDIS) yang siap menaklukkan berbagai medan dari perkotaan hingga off-road ringan.",
-    image: "/images/why-jaecoo/card-feature.jpeg"
+    title: "PERFORMA ANDAL",
+    description: "Dirancang untuk berbagai kondisi jalan, memberikan performa stabil dan efisien.",
+    image: "/images/why-jaecoo/card-feature3.jpg"
   },
   {
     id: 4,
-    title: "Garansi Panjang",
-    description: "Ketenangan pikiran dengan garansi mesin 10 tahun dan layanan roadside assistance 24/7.",
-    image: "/images/why-jaecoo/card-feature.jpeg"
+    title: "KENYAMANAN MAKSIMAL",
+    description: "Ruang kabin luas dengan material berkualitas tinggi untuk pengalaman berkendara yang lebih baik.",
+    image: "/images/why-jaecoo/card-feature4.jpg"
   }
 ];
 
@@ -51,7 +51,7 @@ export default function WhyJaecoo() {
               WHY JAECOO
             </h2>
             <p className="font-geist font-normal text-gray-800 text-[15px] md:text-[18px] leading-[1.6] max-w-2xl">
-              Jaecoo menggabungkan ketangguhan off-road sejati dengan kemewahan urban. Dirancang untuk para inovator yang menghargai kualitas, performa, dan teknologi terdepan.
+              Jaecoo hadir untuk mereka yang menginginkan lebih dari sekadar mobil. Kami menghadirkan teknologi cerdas, desain elegan, dan performa andal untuk setiap perjalanan Anda.
             </p>
           </ScrollReveal>
         </div>
@@ -64,7 +64,7 @@ export default function WhyJaecoo() {
                 {/* Image Container with Badge */}
                 <div className="relative w-[130px] shrink-0 sm:w-full sm:h-[150px] lg:h-[120px] xl:h-[130px] overflow-hidden">
                   {/* Badge */}
-                  <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-10 w-6 h-6 sm:w-7 sm:h-7 bg-primary rounded-full flex items-center justify-center shadow-[0_4px_12px_-4px_rgba(15,122,131,0.5)]">
+                  <div className="absolute top-1 left-1 sm:top-2 sm:left-2 z-10 w-6 h-6 sm:w-7 sm:h-7 bg-primary rounded-full flex items-center justify-center shadow-[0_4px_12px_-4px_rgba(15,122,131,0.5)]">
                     <span className="font-geist font-medium text-white text-[10px] sm:text-[12px]">0{card.id}</span>
                   </div>
                   
