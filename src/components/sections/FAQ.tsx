@@ -209,7 +209,7 @@ export default function FAQ() {
             {/* Right Side: Image */}
             <div className="relative z-10 w-full xl:w-[22%] shrink-0 h-[100px] rounded-xl overflow-hidden block">
               <Image 
-                src="/images/step-1.png"
+                src="/images/card.jpg"
                 alt="Jaecoo Helpdesk"
                 fill
                 className="object-cover object-center"
