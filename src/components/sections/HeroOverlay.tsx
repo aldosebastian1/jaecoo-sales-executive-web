@@ -5,8 +5,8 @@ import HeroLeadCTA from '@/components/forms/HeroLeadCTA';
 
 export default function HeroOverlay() {
   return (
-    <div className="relative z-20 max-w-[1440px] w-full h-full mx-auto px-4 sm:px-8 md:px-[60px] flex flex-col justify-start md:justify-center items-start pt-[170px] md:pt-0 pb-[190px] md:pb-32">
-      <div className="w-full max-w-2xl h-full md:h-auto flex flex-col mt-0 md:-mt-20">
+    <div className="relative z-20 max-w-[1440px] w-full h-full mx-auto px-4 sm:px-8 md:px-[60px] flex flex-col justify-start md:justify-center items-start pt-[170px] md:pt-0 pb-[190px] md:pb-32 pointer-events-none">
+      <div className="w-full max-w-2xl h-full md:h-auto flex flex-col mt-0 md:-mt-20 pointer-events-auto">
         <ScrollReveal priority variant="slide-right-short" delay={0.1} className="w-full h-full md:h-auto flex flex-col justify-between md:justify-start items-start text-left">
           <div>
             <div className="inline-flex mb-3">
@@ -31,9 +31,9 @@ export default function HeroOverlay() {
       </div>
 
       {/* Value Section (Absolute Bottom to guarantee 4px gap with Badge Slider) */}
-      <div className="absolute bottom-[110px] md:bottom-[91px] left-0 w-full flex justify-center px-4 sm:px-8 md:px-[60px]">
+      <div className="absolute bottom-[110px] md:bottom-[91px] left-0 w-full flex justify-center px-4 sm:px-8 md:px-[60px] pointer-events-auto">
         <ScrollReveal priority variant="slide-up" delay={0.3} className="w-full md:w-fit">
-          <div className="bg-black/40 backdrop-blur-md rounded-full w-full md:w-fit mx-auto grid grid-cols-4 md:flex md:flex-nowrap justify-center items-center gap-1 md:gap-12 px-2 py-3 md:px-12 md:py-6">
+          <div className="bg-black/40 backdrop-blur-md rounded-[20px] md:rounded-full w-full md:w-fit mx-auto grid grid-cols-4 md:flex md:flex-nowrap justify-center items-center gap-1 md:gap-12 px-3 py-3 md:px-12 md:py-6">
             <div className="flex flex-col md:flex-row items-center gap-1 md:gap-4 text-center md:text-left">
               <svg className="w-[16px] h-[16px] md:w-[28px] md:h-[28px] text-white shrink-0" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
               <div className="flex flex-col">
