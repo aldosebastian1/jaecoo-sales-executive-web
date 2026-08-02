@@ -9,33 +9,33 @@ import Image from 'next/image';
 const steps = [
   {
     id: 1,
-    title: 'Konsultasi Awal',
-    description: 'Hubungi tim sales kami untuk mendapatkan informasi harga, promo terbaru, dan simulasi kredit.',
-    image: '/images/step-1.png'
+    title: 'INQUIRY',
+    description: 'Mulai perjalanan Anda dengan menghubungi kami melalui website, WhatsApp, atau telepon.',
+    image: '/images/customer-journey/step-1.jpg'
   },
   {
     id: 2,
-    title: 'Test Drive',
-    description: 'Rasakan langsung performa dan kenyamanan Jaecoo dengan menjadwalkan test drive di lokasi Anda.',
-    image: '/images/step-1.png'
+    title: 'KONSULTASI',
+    description: 'Tim kami siap membantu Anda memahami produk dan menemukan SUV yang paling sesuai dengan kebutuhan Anda.',
+    image: '/images/customer-journey/step-2.jpg'
   },
   {
     id: 3,
-    title: 'Proses SPK & Kredit',
-    description: 'Pengisian Surat Pesanan Kendaraan (SPK) dan proses approval kredit dengan cepat dan mudah.',
-    image: '/images/step-1.png'
+    title: 'TEST DRIVE',
+    description: 'Rasakan langsung performa, kenyamanan, dan teknologi Jaecoo melalui test drive langsung di dealer kami.',
+    image: '/images/customer-journey/step-3.jpg'
   },
   {
     id: 4,
-    title: 'Pemberkasan',
-    description: 'Proses pengurusan STNK, BPKB, dan plat nomor kendaraan oleh tim kami hingga selesai.',
-    image: '/images/step-1.png'
+    title: 'PEMBELIAN',
+    description: 'Proses pembelian yang mudah, transparan, dan aman dengan dukungan tim profesional kami.',
+    image: '/images/customer-journey/step-4.jpg'
   },
   {
     id: 5,
-    title: 'Pengiriman Mobil',
-    description: 'Mobil impian Anda diantar langsung ke garasi rumah Anda dengan kondisi prima dan siap jalan.',
-    image: '/images/step-1.png'
+    title: 'PENGIRIMAN',
+    description: 'Mobil Jaecoo Anda siap diantar dengan serah terima yang istimewa dan layanan purna jual terbaik.',
+    image: '/images/customer-journey/step-5.jpg'
   }
 ];
 
