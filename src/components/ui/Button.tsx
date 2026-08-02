@@ -69,7 +69,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     );
 
     const Component = (as || (href ? 'a' : 'button')) as React.ElementType;
-    // @ts-expect-error - Framer motion dynamic component typing limitation
     const MotionComponent = motion(Component);
 
     return (
