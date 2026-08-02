@@ -46,6 +46,6 @@ export const vehicles: Vehicle[] = [
     slogan: 'Super Hybrid',
     priceLabel: 'Mulai',
     priceValue: 'Rp 700 Juta',
-    image: '/images/catalog/jaecoo-catalog-4.png',
+    image: '/images/catalog/jaecoo-catalog-5.png',
   },
 ];
